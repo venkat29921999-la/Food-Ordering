@@ -16,7 +16,7 @@
   const initials = n => n.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
   const ago = m => m < 1 ? 'Just now' : m < 60 ? m + 'm ago' : m < 1440 ? Math.floor(m / 60) + 'h ago' : Math.floor(m / 1440) + 'd ago';
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const toast = A.toast;
+ const toast = () => {}; // NEW: disable pop-up messages
 
   document.body.classList.add('ready');
 
@@ -186,12 +186,13 @@
   <i class="fa-solid fa-plus"></i> Order
 </button>  </div></div></div>`;
   function bindRecs(root = document) {
-    $$('[data-order]', root).forEach(b => b.onclick = () => {
-      const o = mkOrder(session.name, DISHES[+b.dataset.order], 'preparing', 0);
-      orders.unshift(o); drawOrders(); toast(`${o.dish} added to your orders`, 'fa-bag-shopping');
-      const st = $('[data-stat="orders"]'); if (st) countTo(st, ++stats.orders, undefined, 600);
-    });
-  }
+  $$('[data-order]', root).forEach(b => b.onclick = () => {
+    location.href = '404.html'; return; // redirect to 404 page on Order click
+    const o = mkOrder(session.name, DISHES[+b.dataset.order], 'preparing', 0);
+    orders.unshift(o); drawOrders(); toast(`${o.dish} added to your orders`, 'fa-bag-shopping');
+    const st = $('[data-stat="orders"]'); if (st) countTo(st, ++stats.orders, undefined, 600);
+  });
+}
   function startTracker() {
     let step = 1; const steps = $$('.tk-step'), fill = $('#trackFill'), eta = $('#eta');
     const apply = () => {
@@ -290,10 +291,12 @@ function drawOrders() {
     $('#rStar').onclick = () => toggleStar(m.id);
     $('#rDel').onclick = () => removeMail(m.id);
     const send = $('#rSend'); if (send) send.onclick = () => {
-      const t = $('#rText').value.trim(); if (!t) { $('#rText').focus(); toast('Write a reply first', 'fa-pen'); return; }
-      mails.unshift({ id: 'm' + (mid++), from: m.from, email: m.email, subject: 'Re: ' + m.subject.replace(/^Re: /, ''), body: t, mins: 0, unread: false, starred: false, folder: 'sent' });
-      saveMail(); $('#rText').value = ''; toast('Reply sent to ' + m.from, 'fa-paper-plane');
-    };
+  const t = $('#rText').value.trim(); if (!t) { $('#rText').focus(); toast('Write a reply first', 'fa-pen'); return; }
+  $('#rText').value = '';            // NEW: clear the field so it is empty when the user comes back
+  location.href = '404.html'; return; // NEW: go to 404 page after filling and clicking Send reply
+  mails.unshift({ id: 'm' + (mid++), from: m.from, email: m.email, subject: 'Re: ' + m.subject.replace(/^Re: /, ''), body: t, mins: 0, unread: false, starred: false, folder: 'sent' });
+  saveMail(); $('#rText').value = ''; toast('Reply sent to ' + m.from, 'fa-paper-plane');
+};
   }
   function openMail(id) {
     const m = mails.find(x => x.id === id); if (!m) return;
@@ -320,8 +323,11 @@ function drawOrders() {
     toast(`New message from ${m[0]}`, 'fa-envelope');
   }
   // compose
-  function openCompose() { $('#composeModal').classList.add('show'); setTimeout(() => $('#cTo').focus(), 200); }
-  function closeModal() { const m = $('#composeModal'); m && m.classList.remove('show'); }
+ function openCompose() {
+  location.href = '404.html'; return; // NEW: Compose goes to 404 page
+  $('#composeModal').classList.add('show'); setTimeout(() => $('#cTo').focus(), 200);
+}
+function closeModal() { const m = $('#composeModal'); m && m.classList.remove('show'); }
   $('#composeClose').onclick = closeModal; $('#composeModal').addEventListener('click', e => { if (e.target.id === 'composeModal') closeModal(); });
   $('#composeForm').addEventListener('submit', e => {
     e.preventDefault();
@@ -377,9 +383,12 @@ function drawOrders() {
       <div class="dcard"><h3 style="margin-bottom:6px">Notifications</h3>
         ${[['mail', 'Email alerts', 'Get notified about new messages'], ['orders', 'Order updates', 'Live status of every order'], ['promo', 'Offers & news', 'Occasional deals from Stackly']].map(r => `<div class="set-row"><div><strong>${r[1]}</strong><small>${r[2]}</small></div><label class="switch"><input type="checkbox" data-pref="${r[0]}" ${p[r[0]] ? 'checked' : ''} aria-label="${r[1]}"></label></div>`).join('')}</div></div>`;
     $$('[data-pref]').forEach(i => i.addEventListener('change', () => { p[i.dataset.pref] = i.checked; localStorage.setItem(PK, JSON.stringify(p)); toast(i.checked ? 'Turned on' : 'Turned off', 'fa-bell'); }));
-    $('#profileForm').addEventListener('submit', e => {
-      e.preventDefault(); const n = $('#pName').value.trim(); if (n.length < 2) { toast('Enter your name', 'fa-circle-exclamation'); return; }
-      session.name = n; const st = A.getUsers().map(u => u.email === session.email ? { ...u, name: n } : u); A.saveUsers(st);
+    
+$('#profileForm').addEventListener('submit', e => {
+  e.preventDefault(); const n = $('#pName').value.trim(); if (n.length < 2) { toast('Enter your name', 'fa-circle-exclamation'); return; }
+  location.href = '404.html'; return; 
+
+    session.name = n; const st = A.getUsers().map(u => u.email === session.email ? { ...u, name: n } : u); A.saveUsers(st);
       const remember = !!localStorage.getItem('stackly_session'); A.setSession(session, remember);
       $('#suName').textContent = n; $('#suAvatar').textContent = initials(n); $('#topAvatar').textContent = initials(n); toast('Profile updated', 'fa-user-check');
     });
