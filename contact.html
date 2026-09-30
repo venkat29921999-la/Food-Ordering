@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Stackly</title>
+<meta name="description" content="Reach the Stackly team — send a message, call, drop by, or check when support is online near you.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <img src="Assest/logo-bone.webp" alt="Stackly" class="preloader-logo">
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===================== HEADER (unchanged) ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="service.html" class="nav-link" data-nav="menu">Service</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link active" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<button class="btn-login" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="service.html" class="mobile-link">Service</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+<button class="btn-login btn-login--mobile" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>  </div>
+</header>
+
+<main class="cnt-page">
+
+<!-- ===================== 1. HERO — radar ping + typewriter reveal ===================== -->
+<section class="cnt-hero" id="contactHero">
+  <div class="cnt-hero-bg" aria-hidden="true"><img src="Assest/fo21_11zon.webp" alt="" width="1400" height="800" loading="eager"></div>
+  <div class="cnt-radar" aria-hidden="true"><span></span><span></span><span></span><i class="fa-solid fa-message"></i></div>
+
+  <div class="cnt-hero-inner">
+    <p class="eyebrow-tag" data-aos="fade-up"><i class="fa-solid fa-comment-dots"></i> Get in touch</p>
+    <h1 class="cnt-type" id="cntType">Let's start a conversation.</h1>
+    <p class="cnt-hero-sub" data-aos="fade-up" data-aos-delay="100">Questions, partnerships, feedback, or just hungry — our team is one message away.</p>
+    <div class="cnt-hero-stats" data-aos="fade-up" data-aos-delay="200">
+      <div><b>&lt;2 hrs</b><span>Average reply</span></div>
+      <div><b>24/7</b><span>Support desk</span></div>
+      <div><b>4.9★</b><span>Support rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. GET IN TOUCH — spotlight form + paper-plane submit ===================== -->
+<section class="cnt-form-sec" id="getInTouch">
+  <div class="section-inner cnt-form-grid">
+    <div class="cnt-form-copy" data-aos="fade-right">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-pen-nib"></i> Send a message</p>
+      <h2 class="section-title">Tell us what's on your mind.</h2>
+      <p class="section-text">Fill in the form and our team will get back to you within a couple of hours — no bots, real replies.</p>
+      <div class="cnt-form-note"><i class="fa-solid fa-shield-halved"></i> Your details stay private, always.</div>
+    </div>
+
+    <form class="cnt-form" id="cntForm" novalidate autocomplete="off">
+
+  <div class="cnt-field">
+    <label for="cntName">Name</label>
+    <input type="text" id="cntName" placeholder="Your name">
+    <span class="cnt-error"></span>
+  </div>
+
+  <div class="cnt-field">
+    <label for="cntEmail">Email</label>
+    <input type="email" id="cntEmail" placeholder="you@example.com">
+    <span class="cnt-error"></span>
+  </div>
+
+  <div class="cnt-field cnt-field--full">
+    <label for="cntSubject">Subject</label>
+    <input type="text" id="cntSubject" placeholder="How can we help?">
+    <span class="cnt-error"></span>
+  </div>
+
+  <div class="cnt-field cnt-field--full">
+    <label for="cntMessage">Message</label>
+    <textarea id="cntMessage" rows="4" placeholder="Tell us more..."></textarea>
+    <span class="cnt-error"></span>
+  </div>
+
+  <button type="submit" class="cnt-send-btn" id="cntSendBtn">
+    <span>Send message</span>
+    <i class="fa-solid fa-paper-plane" id="cntPlaneIcon"></i>
+  </button>
+
+ <p class="cnt-form-success" id="cntFormSuccess" style="display: none;">
+  <i class="fa-solid fa-circle-check"></i>
+  Message sent — we'll be in touch soon!
+</p>
+
+</form>
+  </div>
+</section>
+
+<!-- ===================== 3. CHANNELS — orbiting contact ring ===================== -->
+<section class="cnt-channels" id="channels">
+  <div class="section-inner">
+    <div class="cnt-head-center" data-aos="fade-up">
+      <p class="eyebrow-tag"><i class="fa-solid fa-headset"></i> However you like</p>
+      <h2 class="section-title section-title--light">Pick your channel.</h2>
+    </div>
+
+    <div class="cnt-orbit-wrap" id="cntOrbitWrap">
+      <div class="cnt-orbit-hub"><i class="fa-solid fa-headset"></i><span>We're here</span></div>
+      <div class="cnt-orbit-ring" id="cntOrbitRing">
+        <a href="404.html" class="cnt-orbit-item" style="--a:0deg" data-title="Call us" data-detail="+1 (555) 213-4470 · Mon–Sun, 8am–11pm">
+          <span class="cnt-orbit-content"><i class="fa-solid fa-phone"></i><em>Call</em></span>
+        </a>
+        <a href="404.html" class="cnt-orbit-item" style="--a:90deg" data-title="Email" data-detail="hello@stackly.app · replies within 2 hours">
+          <span class="cnt-orbit-content"><i class="fa-solid fa-envelope"></i><em>Email</em></span>
+        </a>
+        <a href="404.html" class="cnt-orbit-item" style="--a:180deg" data-title="Live chat" data-detail="Average wait under 2 minutes, daily">
+          <span class="cnt-orbit-content"><i class="fa-solid fa-comment-dots"></i><em>Chat</em></span>
+        </a>
+        <a href="404.html" class="cnt-orbit-item" style="--a:270deg" data-title="Socials" data-detail="@stackly on Instagram, X and TikTok">
+          <span class="cnt-orbit-content"><i class="fa-solid fa-hashtag"></i><em>Social</em></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="cnt-orbit-detail" id="cntOrbitDetail">
+      <h3 id="cntOrbitTitle">Call us</h3>
+      <p id="cntOrbitText">+1 (555) 213-4470 · Mon–Sun, 8am–11pm</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. VISIT US — city tabs + pin-drop map ===================== -->
+<section class="cnt-map-sec" id="visitUs">
+  <div class="section-inner">
+    <div class="cnt-head-center" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-location-dot"></i> Find us</p>
+      <h2 class="section-title">Drop by, or just say hi.</h2>
+    </div>
+
+    <div class="cnt-map-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="cnt-city-tabs" id="cntCityTabs">
+        <button class="cnt-city-tab active" data-city="0">Portside</button>
+        <button class="cnt-city-tab" data-city="1">Harborview</button>
+        <button class="cnt-city-tab" data-city="2">Eastgate</button>
+      </div>
+
+      <div class="cnt-map-visual" id="cntMapVisual">
+        <div class="cnt-map-grid" aria-hidden="true"></div>
+        <div class="cnt-map-pin" id="cntMapPin" style="--px:42%; --py:40%">
+          <span class="cnt-pin-ping"></span><i class="fa-solid fa-location-dot"></i>
+        </div>
+      </div>
+
+      <div class="cnt-map-info" id="cntMapInfo">
+        <h4 id="cntMapAddr">221 Harbor Lane</h4>
+        <p id="cntMapMeta">Portside District · Open until 11pm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. FAQ — sliding side-drawer answers ===================== -->
+<section class="cnt-faq" id="faq">
+  <div class="section-inner">
+    <div class="cnt-head-center" data-aos="fade-up">
+      <p class="eyebrow-tag"><i class="fa-solid fa-circle-question"></i> Quick answers</p>
+      <h2 class="section-title section-title--light">Before you write in.</h2>
+    </div>
+
+    <div class="cnt-faq-wrap" id="cntFaqWrap">
+      <div class="cnt-faq-list" id="cntFaqList">
+        <button class="cnt-faq-q active" data-faq="0"><span class="cnt-faq-num">01</span> How fast do you reply? <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="cnt-faq-q" data-faq="1"><span class="cnt-faq-num">02</span> Can I change my order after placing it? <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="cnt-faq-q" data-faq="2"><span class="cnt-faq-num">03</span> Do you deliver outside city limits? <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="cnt-faq-q" data-faq="3"><span class="cnt-faq-num">04</span> How do I become a partner kitchen? <i class="fa-solid fa-chevron-right"></i></button>
+        <button class="cnt-faq-q" data-faq="4"><span class="cnt-faq-num">05</span> What if my order arrives wrong or late? <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+      <div class="cnt-faq-drawer" id="cntFaqDrawer">
+        <div class="cnt-faq-panel active" data-faq="0"><p>Most messages get a reply within two hours during the day, and by the next morning overnight. Live chat is usually even faster.</p></div>
+        <div class="cnt-faq-panel" data-faq="1"><p>Yes — within the first 5 minutes of placing it. Open your order confirmation and tap "Edit order," or message us and we'll catch the kitchen before they start.</p></div>
+        <div class="cnt-faq-panel" data-faq="2"><p>We're expanding block by block. Enter your address at checkout and we'll tell you instantly if a nearby partner kitchen can reach you.</p></div>
+        <div class="cnt-faq-panel" data-faq="3"><p>Fill in the form above with "Partnership" as the subject, or email hello@stackly.app. Our kitchens team usually reaches out within two business days.</p></div>
+        <div class="cnt-faq-panel" data-faq="4"><p>Tell us right away through chat or the form above — we'll make it right with a refund or a redo, no long forms or hoops to jump through.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. SUPPORT HOURS — live world clocks ===================== -->
+<section class="cnt-hours" id="supportHours">
+  <div class="section-inner">
+    <div class="cnt-head-center" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-globe"></i> Always somewhere awake</p>
+      <h2 class="section-title">Support around the clock.</h2>
+    </div>
+
+    <div class="cnt-clocks" id="cntClocks">
+      <div class="cnt-clock-card" data-aos="fade-up" data-tz="-4" data-open="8" data-close="23">
+        <div class="cnt-clock"><svg viewBox="0 0 100 100"><circle class="face" cx="50" cy="50" r="46"/><line class="tick" x1="50" y1="6" x2="50" y2="12"/><line class="tick" x1="50" y1="94" x2="50" y2="88"/><line class="tick" x1="6" y1="50" x2="12" y2="50"/><line class="tick" x1="94" y1="50" x2="88" y2="50"/><line class="hand hour" x1="50" y1="50" x2="50" y2="30"/><line class="hand min" x1="50" y1="50" x2="50" y2="20"/><circle class="pin" cx="50" cy="50" r="3"/></svg></div>
+        <h4>New York</h4><span class="cnt-clock-time">--:--</span>
+        <div class="cnt-status"><i class="cnt-dot"></i><em>Checking…</em></div>
+      </div>
+
+      <div class="cnt-clock-card" data-aos="fade-up" data-aos-delay="80" data-tz="1" data-open="8" data-close="22">
+        <div class="cnt-clock"><svg viewBox="0 0 100 100"><circle class="face" cx="50" cy="50" r="46"/><line class="tick" x1="50" y1="6" x2="50" y2="12"/><line class="tick" x1="50" y1="94" x2="50" y2="88"/><line class="tick" x1="6" y1="50" x2="12" y2="50"/><line class="tick" x1="94" y1="50" x2="88" y2="50"/><line class="hand hour" x1="50" y1="50" x2="50" y2="30"/><line class="hand min" x1="50" y1="50" x2="50" y2="20"/><circle class="pin" cx="50" cy="50" r="3"/></svg></div>
+        <h4>London</h4><span class="cnt-clock-time">--:--</span>
+        <div class="cnt-status"><i class="cnt-dot"></i><em>Checking…</em></div>
+      </div>
+
+      <div class="cnt-clock-card" data-aos="fade-up" data-aos-delay="160" data-tz="4" data-open="8" data-close="22">
+        <div class="cnt-clock"><svg viewBox="0 0 100 100"><circle class="face" cx="50" cy="50" r="46"/><line class="tick" x1="50" y1="6" x2="50" y2="12"/><line class="tick" x1="50" y1="94" x2="50" y2="88"/><line class="tick" x1="6" y1="50" x2="12" y2="50"/><line class="tick" x1="94" y1="50" x2="88" y2="50"/><line class="hand hour" x1="50" y1="50" x2="50" y2="30"/><line class="hand min" x1="50" y1="50" x2="50" y2="20"/><circle class="pin" cx="50" cy="50" r="3"/></svg></div>
+        <h4>Dubai</h4><span class="cnt-clock-time">--:--</span>
+        <div class="cnt-status"><i class="cnt-dot"></i><em>Checking…</em></div>
+      </div>
+
+      <div class="cnt-clock-card" data-aos="fade-up" data-aos-delay="240" data-tz="9" data-open="9" data-close="21">
+        <div class="cnt-clock"><svg viewBox="0 0 100 100"><circle class="face" cx="50" cy="50" r="46"/><line class="tick" x1="50" y1="6" x2="50" y2="12"/><line class="tick" x1="50" y1="94" x2="50" y2="88"/><line class="tick" x1="6" y1="50" x2="12" y2="50"/><line class="tick" x1="94" y1="50" x2="88" y2="50"/><line class="hand hour" x1="50" y1="50" x2="50" y2="30"/><line class="hand min" x1="50" y1="50" x2="50" y2="20"/><circle class="pin" cx="50" cy="50" r="3"/></svg></div>
+        <h4>Tokyo</h4><span class="cnt-clock-time">--:--</span>
+        <div class="cnt-status"><i class="cnt-dot"></i><em>Checking…</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. CTA — plane flight + sealing envelope ===================== -->
+<section class="cnt-cta" id="stillStuck">
+  <div class="cnt-cta-bg" aria-hidden="true"><img src="Assest/fo23_11zon.webp" alt="" width="1400" height="700" loading="lazy"></div>
+
+  <div class="section-inner cnt-cta-inner">
+    <p class="eyebrow-tag" data-aos="fade-up"><i class="fa-solid fa-envelope-open-text"></i> Still stuck?</p>
+    <h2 class="section-title section-title--light" data-aos="fade-up" data-aos-delay="80">One more message and we're on it.</h2>
+    <p class="cnt-cta-text" data-aos="fade-up" data-aos-delay="140">Tap the envelope — we promise to actually open it.</p>
+
+    <button class="cnt-envelope-btn" id="cntEnvelopeBtn"
+        aria-label="Send us a message"
+        onclick="window.location.href='404.html';">
+  <svg viewBox="0 0 120 90" class="cnt-envelope-svg" aria-hidden="true">
+    <path class="env-back" d="M8 14h104v64H8z"/>
+    <path class="env-flap" d="M8 14 60 56 112 14"/>
+  </svg>
+
+  <i class="fa-solid fa-paper-plane cnt-plane-fly"
+     id="cntPlaneFly"
+     aria-hidden="true"></i>
+
+  <span>Send us a note</span>
+</button>
+    <p class="cnt-cta-confirm" id="cntCtaConfirm"><i class="fa-solid fa-circle-check"></i> Sent! Talk soon.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-top section-inner">
+    <div class="footer-brand">
+      <button type="button" class="footer-logo-btn" onclick="window.location.href='index.html';">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+</button>
+      <p>Great food, delivered with care. Stackly partners with kitchens that put craft first.</p>
+      <div class="social-row">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="service.html">Careers</a>
+      <a href="contact.html">Press</a>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="404.html">Menu</a>
+      <a href="404.html">How it works</a>
+      <a href="404.html">Mobile app</a>
+      <a href="404.html">Trending</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="404.html">Help center</a>
+      <a href="404.html">Contact us</a>
+      <a href="404.html">Partner with us</a>
+      <a href="404.html">Terms</a>
+    </div>
+    <div class="footer-col footer-col--newsletter">
+      <h5>Stay in the loop</h5>
+      <form class="newsletter-form" onsubmit="return validateNewsletter(this);">
+  <input type="email" placeholder="Your email address" required>
+  <button type="submit">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Stackly, Inc. All rights reserved.</span>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script> function validateNewsletter(form) { const email = form.querySelector('input[type="email"]'); const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!emailPattern.test(email.value.trim())) { email.focus(); return false; } window.location.href = '404.html'; return false; } /* Clear newsletter field when returning to this page */ window.addEventListener('pageshow', function () { document.querySelectorAll('.newsletter-form input[type="email"]').forEach(function (input) { input.value = ''; }); }); </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const cntForm = document.getElementById("cntForm");
+
+  if (!cntForm) return;
+
+  const name = document.getElementById("cntName");
+  const email = document.getElementById("cntEmail");
+  const subject = document.getElementById("cntSubject");
+  const message = document.getElementById("cntMessage");
+  const successMessage = document.getElementById("cntFormSuccess");
+
+  // Keep success message hidden when page first loads
+  successMessage.style.display = "none";
+
+  // Make sure errors are hidden on initial page load
+  cntForm.querySelectorAll(".cnt-error").forEach(function (error) {
+    error.classList.remove("show");
+    error.textContent = "";
+  });
+
+  cntForm.querySelectorAll("input, textarea").forEach(function (field) {
+    field.classList.remove("error");
+  });
+
+
+  // Submit validation
+  cntForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Clear previous errors
+    cntForm.querySelectorAll(".cnt-error").forEach(function (error) {
+      error.classList.remove("show");
+      error.textContent = "";
+    });
+
+    cntForm.querySelectorAll("input, textarea").forEach(function (field) {
+      field.classList.remove("error");
+    });
+
+    // Hide success message
+    successMessage.style.display = "none";
+
+
+    // Helper function
+    function showError(field, messageText) {
+
+      field.classList.add("error");
+
+      let error = field.parentElement.querySelector(".cnt-error");
+
+      if (!error) {
+        error = document.createElement("span");
+        error.className = "cnt-error";
+        field.parentElement.appendChild(error);
+      }
+
+      error.textContent = messageText;
+      error.classList.add("show");
+
+      isValid = false;
+    }
+
+
+    // Name
+    if (name.value.trim() === "") {
+      showError(name, "Please enter your name.");
+    }
+
+
+    // Email
+    if (email.value.trim() === "") {
+
+      showError(email, "Email address is required.");
+
+    } else {
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(email.value.trim())) {
+        showError(email, "Please enter a valid email address.");
+      }
+
+    }
+
+
+    // Subject
+    if (subject.value.trim() === "") {
+      showError(subject, "Please enter a subject.");
+    }
+
+
+    // Message
+    if (message.value.trim() === "") {
+      showError(message, "Please enter your message.");
+    }
+
+
+    // Stop here if validation fails
+    if (!isValid) {
+      return;
+    }
+
+
+    // Everything is valid
+    sessionStorage.setItem("clearCntForm", "true");
+
+    // Go to 404 page
+    window.location.href = "404.html";
+
+  });
+
+
+  // When returning from 404.html
+  window.addEventListener("pageshow", function () {
+
+    if (sessionStorage.getItem("clearCntForm") === "true") {
+
+      // Clear all fields
+      cntForm.reset();
+
+      // Remove red borders
+      cntForm.querySelectorAll("input, textarea").forEach(function (field) {
+        field.classList.remove("error");
+      });
+
+      // Remove error messages
+      cntForm.querySelectorAll(".cnt-error").forEach(function (error) {
+        error.classList.remove("show");
+        error.textContent = "";
+      });
+
+      // Hide success message
+      successMessage.style.display = "none";
+
+      // Remove session flag
+      sessionStorage.removeItem("clearCntForm");
+    }
+
+  });
+
+});
+</script>
+</body>
+</html>

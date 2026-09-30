@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Stackly</title>
+<meta name="description" content="The story, numbers, people and promises behind Stackly — great food, delivered with care.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <img src="Assest/logo-bone.webp" alt="Stackly" class="preloader-logo">
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===================== HEADER (same as other pages) ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html#home" class="brand">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link active" data-nav="about">About</a></li>
+        <li><a href="service.html" class="nav-link" data-nav="menu">Service</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<button class="btn-login" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="service.html" class="mobile-link">Service</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+<button class="btn-login btn-login--mobile" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>  </div>
+</header>
+
+<main class="abt-page">
+
+<!-- ===================== 1. HERO — flashlight kitchen + dropping letters ===================== -->
+<section class="abt-hero" id="aboutHero">
+  <div class="abt-hero-media" aria-hidden="true">
+    <img class="abt-hero-img abt-hero-img--dim" src="Assest/fo27_11zon.webp" alt="" width="1400" height="800" loading="eager">
+    <img class="abt-hero-img abt-hero-img--lit" src="Assest/fo27_11zon.webp" alt="" width="1400" height="800" loading="eager">
+  </div>
+  <div class="abt-lamp" aria-hidden="true"></div>
+  <div class="abt-hero-veil" aria-hidden="true"></div>
+
+  <div class="abt-hero-inner">
+    <p class="eyebrow-tag abt-fade" style="--d:.05"><i class="fa-solid fa-utensils"></i> About Stackly</p>
+    <h1 class="abt-title" aria-label="We plate the city's stories.">
+      <span class="abt-line">We plate the</span>
+      <span class="abt-line abt-line--accent">city's stories.</span>
+    </h1>
+    <p class="abt-hero-sub abt-fade" style="--d:1.15">Seven years, twelve hundred kitchens, one obsession: making the trip from stove to doorstep feel as good as the first bite.</p>
+    <div class="abt-hero-chips abt-fade" style="--d:1.35">
+      <span><i class="fa-solid fa-calendar-check"></i> Since 2019</span>
+      <span><i class="fa-solid fa-store"></i> 1,200+ kitchens</span>
+      <span><i class="fa-solid fa-heart"></i> Made for hungry people</span>
+    </div>
+    <p class="abt-hint abt-fade" style="--d:1.6">
+      <span class="abt-hint-fine"><i class="fa-solid fa-computer-mouse"></i> Move your cursor — the kitchen lights up</span>
+      <span class="abt-hint-touch"><i class="fa-solid fa-lightbulb"></i> Follow the light around the kitchen</span>
+    </p>
+  </div>
+
+  <div class="abt-cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ===================== 2. STORY — developing polaroids + receipt printer ===================== -->
+<section class="abt-story" id="ourStory">
+  <div class="section-inner abt-story-grid">
+    <div class="abt-story-visual">
+      <figure class="abt-polaroid abt-polaroid--a">
+        <span class="abt-tape" aria-hidden="true"></span>
+        <img src="Assest/fo19_11zon.webp" alt="Overhead view of pizzas and pasta spread on a table" width="800" height="1000" loading="lazy">
+        <figcaption>Sunday service, 2019</figcaption>
+      </figure>
+      <figure class="abt-polaroid abt-polaroid--b">
+        <img src="Assest/fo2_under_100kb_11zon.webp" alt="Crispy chicken burger with fries" width="520" height="520" loading="lazy">
+        <figcaption>Fry test #47</figcaption>
+      </figure>
+    </div>
+
+    <div class="abt-story-copy">
+      <p class="eyebrow-tag eyebrow-tag--dark" data-aos="fade-up"><i class="fa-solid fa-book-open"></i> Our story</p>
+      <h2 class="section-title abt-rise"><span>It started with a cold plate of fries.</span></h2>
+      <p class="section-text" data-aos="fade-up" data-aos-delay="100">Stackly began as a frustration with slow, clunky food apps. We wanted the ordering experience we always wished existed — quick, honest, and respectful of the kitchen behind every plate. So we built it, one partner at a time.</p>
+
+      <div class="abt-printer" aria-label="Receipt of Stackly milestones">
+        <div class="abt-printer-head"><span class="abt-printer-led" aria-hidden="true"></span><span>STACKLY · ORDER #0001</span><i class="fa-solid fa-receipt" aria-hidden="true"></i></div>
+        <div class="abt-printer-slot" aria-hidden="true"></div>
+        <div class="abt-paper-mask">
+          <div class="abt-paper">
+            <h4>THE STACKLY STORY</h4>
+            <p class="abt-paper-meta">Table: everywhere &nbsp;·&nbsp; Server: you</p>
+            <ul class="abt-ledger">
+              <li><b>2019</b><span>Napkin sketch, cold fries, big idea</span></li>
+              <li><b>2020</b><span>First 12 partner kitchens say yes</span></li>
+              <li><b>2022</b><span>300 kitchens, one promise: no surprises</span></li>
+              <li><b>2024</b><span>Smart routing goes live citywide</span></li>
+              <li><b>2026</b><span>1,200+ kitchens, 45K happy diners</span></li>
+            </ul>
+            <div class="abt-paper-total"><span>TOTAL</span><strong>Real food, fast.</strong></div>
+            <div class="abt-barcode" aria-hidden="true"></div>
+            <p class="abt-paper-thanks">THANK YOU · COME HUNGRY</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. NUMBERS — liquid-fill orbs ===================== -->
+<section class="abt-nums" id="byNumbers">
+  <div class="section-inner">
+    <div class="abt-head abt-head--center">
+      <p class="eyebrow-tag" data-aos="fade-up"><i class="fa-solid fa-chart-simple"></i> By the numbers</p>
+      <h2 class="section-title section-title--light abt-rise"><span>Measured in plates, not promises.</span></h2>
+    </div>
+
+    <div class="abt-orbs">
+      <div class="abt-orb" style="--fill:82">
+        <div class="abt-orb-glass">
+          <div class="abt-orb-liquid">
+            <svg class="abt-wave abt-wave--2" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 0 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <svg class="abt-wave" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 20 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <i class="abt-bubble" style="left:18%;width:9px;height:9px;animation-delay:.2s"></i><i class="abt-bubble" style="left:46%;width:6px;height:6px;animation-delay:1.4s"></i><i class="abt-bubble" style="left:72%;width:11px;height:11px;animation-delay:2.3s"></i>
+          </div>
+          <div class="abt-orb-val"><b class="abt-orb-num" data-count="1200">0</b><small>+</small></div>
+        </div>
+        <p><strong>Partner kitchens</strong>Tasted, audited, re-tasted</p>
+      </div>
+
+      <div class="abt-orb" style="--fill:98">
+        <div class="abt-orb-glass">
+          <div class="abt-orb-liquid">
+            <svg class="abt-wave abt-wave--2" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 0 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <svg class="abt-wave" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 20 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <i class="abt-bubble" style="left:24%;width:8px;height:8px;animation-delay:.6s"></i><i class="abt-bubble" style="left:55%;width:12px;height:12px;animation-delay:1.8s"></i><i class="abt-bubble" style="left:80%;width:6px;height:6px;animation-delay:.1s"></i>
+          </div>
+          <div class="abt-orb-val"><b class="abt-orb-num" data-count="98">0</b><small>%</small></div>
+        </div>
+        <p><strong>On-time delivery</strong>Hot stays hot</p>
+      </div>
+
+      <div class="abt-orb" style="--fill:68">
+        <div class="abt-orb-glass">
+          <div class="abt-orb-liquid">
+            <svg class="abt-wave abt-wave--2" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 0 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <svg class="abt-wave" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 20 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <i class="abt-bubble" style="left:15%;width:10px;height:10px;animation-delay:1s"></i><i class="abt-bubble" style="left:50%;width:7px;height:7px;animation-delay:2.6s"></i><i class="abt-bubble" style="left:75%;width:9px;height:9px;animation-delay:.4s"></i>
+          </div>
+          <div class="abt-orb-val"><b class="abt-orb-num" data-count="45">0</b><small>K</small></div>
+        </div>
+        <p><strong>Happy diners</strong>And counting every week</p>
+      </div>
+
+      <div class="abt-orb" style="--fill:96">
+        <div class="abt-orb-glass">
+          <div class="abt-orb-liquid">
+            <svg class="abt-wave abt-wave--2" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 0 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <svg class="abt-wave" viewBox="0 0 800 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 20 100 10 T200 10 T300 10 T400 10 T500 10 T600 10 T700 10 T800 10 V20 H0Z"/></svg>
+            <i class="abt-bubble" style="left:30%;width:8px;height:8px;animation-delay:.9s"></i><i class="abt-bubble" style="left:62%;width:12px;height:12px;animation-delay:2s"></i><i class="abt-bubble" style="left:85%;width:6px;height:6px;animation-delay:1.2s"></i>
+          </div>
+          <div class="abt-orb-val"><b class="abt-orb-num" data-count="4.8" data-decimals="1">0</b><small>★</small></div>
+        </div>
+        <p><strong>Average rating</strong>Across every order</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. JOURNEY — a scooter rides the route as you scroll ===================== -->
+<section class="abt-journey" id="ourRoute">
+  <div class="section-inner">
+    <div class="abt-head abt-head--center">
+      <p class="eyebrow-tag eyebrow-tag--dark" data-aos="fade-up"><i class="fa-solid fa-route"></i> The route</p>
+      <h2 class="section-title abt-rise"><span>From one stove to a thousand doorsteps.</span></h2>
+      <p class="section-text abt-head-text" data-aos="fade-up" data-aos-delay="100">Scroll and follow our rider — every stop is a chapter of how Stackly got here.</p>
+    </div>
+
+    <div class="abt-route" id="abtRoute">
+      <svg class="abt-route-svg" aria-hidden="true"><path class="abt-route-base"/><path class="abt-route-live"/></svg>
+      <div class="abt-rider" id="abtRider" aria-hidden="true"><i class="fa-solid fa-motorcycle"></i></div>
+
+      <div class="abt-stops">
+        <article class="abt-stop">
+          <div class="abt-stop-node"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="abt-stop-card">
+            <img src="Assest/fo13_11zon.webp" alt="Fresh penne pasta salad with cherry tomatoes and arugula" width="720" height="540" loading="lazy">
+            <div class="abt-stop-body"><span class="abt-stop-year">2019</span><h3>A napkin and a frustration</h3><p>Two friends, one slow food app, and a napkin sketch of how ordering should feel. The first prototype shipped from a borrowed kitchen table.</p></div>
+          </div>
+        </article>
+
+        <article class="abt-stop">
+          <div class="abt-stop-node"><i class="fa-solid fa-store"></i></div>
+          <div class="abt-stop-card">
+            <img src="Assest/fo28.webp" alt="Food courier riding through the city with a delivery bag" width="720" height="540" loading="lazy">
+            <div class="abt-stop-body"><span class="abt-stop-year">2021</span><h3>The first night rider</h3><p>Twelve kitchens said yes, and one scooter took to the streets after dark. We learned every shortcut the hard way — and never stopped mapping.</p></div>
+          </div>
+        </article>
+
+        <article class="abt-stop">
+          <div class="abt-stop-node"><i class="fa-solid fa-bolt"></i></div>
+          <div class="abt-stop-card">
+            <img src="Assest/fo15_11zon.webp" alt="Freshly delivered burger" width="720" height="540" loading="lazy">
+            <div class="abt-stop-body"><span class="abt-stop-year">2024</span><h3>Smart routing, warm doorsteps</h3><p>Our routing engine learned to send the nearest rider the second a dish hits the pass. Hot food stayed hot, and 98% of orders arrived on time.</p></div>
+          </div>
+        </article>
+
+        <article class="abt-stop abt-stop--now">
+          <div class="abt-stop-node"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="abt-stop-card abt-stop-card--now">
+            <div class="abt-stop-body"><span class="abt-stop-year">You are here · 2026</span><h3>1,200+ kitchens and growing</h3><p>The route never ends — the next stop is your table. Come and taste the city with us.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. VALUES — cards that stack up like a plate pile ===================== -->
+<section class="abt-values" id="ourValues">
+  <div class="section-inner">
+    <div class="abt-head">
+      <p class="eyebrow-tag" data-aos="fade-up"><i class="fa-solid fa-layer-group"></i> What we stack on</p>
+      <h2 class="section-title section-title--light abt-rise"><span>Four promises, stacked high.</span></h2>
+    </div>
+
+    <div class="abt-stack">
+      <article class="abt-vcard" style="--i:0">
+        <div class="abt-vcard-media"><img src="Assest/fo8_11zon.webp" alt="Colorful fresh quinoa and vegetable bowl" width="640" height="460" loading="lazy"><span class="abt-vcard-num">01</span></div>
+        <div class="abt-vcard-body">
+          <span class="abt-vcard-icon"><i class="fa-solid fa-leaf"></i></span>
+          <h3>Curated, not crowded</h3>
+          <p>Every kitchen on Stackly is tasted, audited and tasted again. If we wouldn't serve it to our own family, it never makes the list.</p>
+          <div class="abt-vcard-pills"><span>Vetted partners</span><span>Quality audits</span></div>
+        </div>
+      </article>
+
+      <article class="abt-vcard" style="--i:1">
+        <div class="abt-vcard-media"><img src="Assest/fo14_11zon.webp" alt="Browsing a menu on a table" width="640" height="460" loading="lazy"><span class="abt-vcard-num">02</span></div>
+        <div class="abt-vcard-body">
+          <span class="abt-vcard-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+          <h3>Pricing you can read</h3>
+          <p>What you see at checkout is what you pay. No surge tricks, no confetti fees — just an itemised receipt you can actually follow.</p>
+          <div class="abt-vcard-pills"><span>No hidden fees</span><span>Clear totals</span></div>
+        </div>
+      </article>
+
+      <article class="abt-vcard" style="--i:2">
+        <div class="abt-vcard-media"><img src="Assest/fo12_11zon.webp" alt="Hands taking a hot pizza slice from a delivery box" width="640" height="460" loading="lazy"><span class="abt-vcard-num">03</span></div>
+        <div class="abt-vcard-body">
+          <span class="abt-vcard-icon"><i class="fa-solid fa-stopwatch"></i></span>
+          <h3>Built for speed</h3>
+          <p>Smart routing sends the nearest rider the moment a dish hits the pass, so hot food stays hot and your evening stays on schedule.</p>
+          <div class="abt-vcard-pills"><span>98% on time</span><span>Live tracking</span></div>
+        </div>
+      </article>
+
+      <article class="abt-vcard" style="--i:3">
+        <div class="abt-vcard-media"><img src="Assest/fo7_11zon.webp" alt="Neapolitan Margherita pizza" width="640" height="460" loading="lazy"><span class="abt-vcard-num">04</span></div>
+        <div class="abt-vcard-body">
+          <span class="abt-vcard-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+          <h3>Craft comes first</h3>
+          <p>We grow only with kitchens that put craft before volume. Fewer, better, and always with a real person you can call when it matters.</p>
+          <div class="abt-vcard-pills"><span>Chef-led</span><span>Human support</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. TEAM — dealt cards with 3D tilt + shine ===================== -->
+<section class="abt-team" id="ourTeam">
+  <div class="section-inner">
+    <div class="abt-head abt-head--center">
+      <p class="eyebrow-tag eyebrow-tag--dark" data-aos="fade-up"><i class="fa-solid fa-users"></i> The people</p>
+      <h2 class="section-title abt-rise"><span>The hands behind the plate.</span></h2>
+      <p class="section-text abt-head-text" data-aos="fade-up" data-aos-delay="100">A small crew of cooks, coders and care-givers. Tilt a card to say hello.</p>
+    </div>
+
+    <div class="abt-team-grid" id="abtTeamGrid">
+      <article class="abt-card" style="--i:0">
+        <div class="abt-card-tilt">
+          <img src="Assest/fo29.webp" alt="Portrait of Meera Iyer" width="520" height="640" loading="lazy">
+          <div class="abt-card-glare" aria-hidden="true"></div>
+          <div class="abt-card-info"><span>Co-founder &amp; CEO</span><h3>Meera Iyer</h3><p>“I still test every new kitchen's fries myself.”</p></div>
+        </div>
+      </article>
+      <article class="abt-card" style="--i:1">
+        <div class="abt-card-tilt">
+          <img src="Assest/fo30.webp" alt="Portrait of Luca Bianchi" width="520" height="640" loading="lazy">
+          <div class="abt-card-glare" aria-hidden="true"></div>
+          <div class="abt-card-info"><span>Head of Kitchens</span><h3>Luca Bianchi</h3><p>“Craft first. Volume can wait its turn.”</p></div>
+        </div>
+      </article>
+      <article class="abt-card" style="--i:2">
+        <div class="abt-card-tilt">
+          <img src="Assest/fo31.webp" alt="Portrait of Daniel Okafor" width="520" height="640" loading="lazy">
+          <div class="abt-card-glare" aria-hidden="true"></div>
+          <div class="abt-card-info"><span>CTO · Routing</span><h3>Daniel Okafor</h3><p>“Every minute saved is a warmer bite.”</p></div>
+        </div>
+      </article>
+      <article class="abt-card" style="--i:3">
+        <div class="abt-card-tilt">
+          <img src="Assest/fo32.webp" alt="Portrait of Sofia Marín" width="520" height="640" loading="lazy">
+          <div class="abt-card-glare" aria-hidden="true"></div>
+          <div class="abt-card-info"><span>Head of Care</span><h3>Sofia Marín</h3><p>“Behind every order is a person waiting.”</p></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. CTA — speed-skew marquees + ingredient burst ===================== -->
+<section class="abt-cta" id="joinUs">
+  <div class="abt-cta-bg" aria-hidden="true"><img src="Assest/fo23_11zon.webp" alt="" width="1400" height="700" loading="lazy"></div>
+
+  <div class="abt-marquee" aria-hidden="true">
+    <div class="abt-marquee-track"><span>Fresh</span><span class="is-solid">Fast</span><span>Fair</span><span class="is-solid">Crafted</span><span>Hot</span><span class="is-solid">Honest</span></div>
+    <div class="abt-marquee-track"><span>Fresh</span><span class="is-solid">Fast</span><span>Fair</span><span class="is-solid">Crafted</span><span>Hot</span><span class="is-solid">Honest</span></div>
+  </div>
+
+  <div class="section-inner abt-cta-inner">
+    <p class="eyebrow-tag" data-aos="fade-up"><i class="fa-solid fa-pizza-slice"></i> Join the table</p>
+    <h2 class="abt-cta-title abt-rise"><span>Hungry for what's next?</span></h2>
+    <p class="abt-cta-text" data-aos="fade-up" data-aos-delay="100">Order something good tonight, or bring your kitchen to a city that's ready to taste it.</p>
+    <div class="abt-cta-actions" id="abtActions">
+      <a href="404.html" class="btn btn-primary" id="abtBurst">Order something good <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="404.html" class="btn btn-ghost btn-ghost--light">Read the journal</a>
+    </div>
+  </div>
+
+  <div class="abt-marquee abt-marquee--rev" aria-hidden="true">
+    <div class="abt-marquee-track"><span class="is-solid">Stackly</span><span>Kitchens</span><span class="is-solid">Riders</span><span>Diners</span><span class="is-solid">Cities</span><span>Stories</span></div>
+    <div class="abt-marquee-track"><span class="is-solid">Stackly</span><span>Kitchens</span><span class="is-solid">Riders</span><span>Diners</span><span class="is-solid">Cities</span><span>Stories</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-top section-inner">
+    <div class="footer-brand">
+      <button type="button" class="footer-logo-btn" onclick="window.location.href='index.html';">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+</button>
+      <p>Great food, delivered with care. Stackly partners with kitchens that put craft first.</p>
+      <div class="social-row">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="service.html">Careers</a>
+      <a href="contact.html">Press</a>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="404.html">Menu</a>
+      <a href="404.html">How it works</a>
+      <a href="404.html">Mobile app</a>
+      <a href="404.html">Trending</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="404.html">Help center</a>
+      <a href="404.html">Contact us</a>
+      <a href="404.html">Partner with us</a>
+      <a href="404.html">Terms</a>
+    </div>
+    <div class="footer-col footer-col--newsletter">
+      <h5>Stay in the loop</h5>
+      <form class="newsletter-form" onsubmit="return validateNewsletter(this);">
+  <input type="email" placeholder="Your email address" required>
+  <button type="submit">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Stackly, Inc. All rights reserved.</span>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script> function validateNewsletter(form) { const email = form.querySelector('input[type="email"]'); const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!emailPattern.test(email.value.trim())) { email.focus(); return false; } window.location.href = '404.html'; return false; } /* Clear newsletter field when returning to this page */ window.addEventListener('pageshow', function () { document.querySelectorAll('.newsletter-form input[type="email"]').forEach(function (input) { input.value = ''; }); }); </script>
+</body>
+</html>

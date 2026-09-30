@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly — Order Great Food, Effortlessly</title>
+<meta name="description" content="Stackly is a premium restaurant ordering platform connecting hungry people with the dishes they love.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <img src="Assest/logo-bone.webp" alt="Stackly" class="preloader-logo">
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link active" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="service.html" class="nav-link" data-nav="menu">Service</a></li>
+        <li><a href="blog.html" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<button class="btn-login" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="service.html" class="mobile-link">Service</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+<button class="btn-login btn-login--mobile" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>  </div>
+</header>
+
+<main>
+
+<!-- ===================== 1. HERO ===================== -->
+<section class="hero" id="home">
+  <div class="hero-noise"></div>
+  <div class="hero-blob hero-blob--1"></div>
+  <div class="hero-blob hero-blob--2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow-tag" data-gsap="tag"><i class="fa-solid fa-utensils"></i> Restaurant ordering, reimagined</p>
+      <h1 class="hero-title">
+        <span class="line" data-gsap="line">Food that finds</span>
+        <span class="line hero-title--accent" data-gsap="line">its way to you.</span>
+      </h1>
+      <p class="hero-sub" data-gsap="fade">Stackly connects you to the city's finest kitchens — order in seconds, track every step, taste something worth stopping for.</p>
+      <div class="hero-cta-row" data-gsap="fade">
+        <button class="btn btn-primary" onclick="window.location.href='404.html';">
+  Order Now <i class="fa-solid fa-arrow-right"></i>
+</button>
+
+<button class="btn btn-ghost" onclick="window.location.href='404.html';">
+  <i class="fa-solid fa-circle-play"></i> Watch how it works
+</button>
+ </div>
+
+      <div class="hero-stats" data-gsap="fade">
+        <div class="stat"><span class="stat-num" data-count="1200">0</span><span class="stat-label">Partner kitchens</span></div>
+        <div class="stat"><span class="stat-num" data-count="98">0</span><span class="stat-label">% on-time delivery</span></div>
+        <div class="stat"><span class="stat-num" data-count="45">0</span><span class="stat-label">K happy diners</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="plate-stage" id="plateStage">
+        <svg class="steam" viewBox="0 0 120 160" aria-hidden="true">
+          <path class="steam-path s1" d="M20 150 C 10 120, 30 110, 20 80 C 10 50, 30 40, 22 10"/>
+          <path class="steam-path s2" d="M60 150 C 50 120, 70 110, 60 80 C 50 50, 70 40, 62 10"/>
+          <path class="steam-path s3" d="M100 150 C 90 120, 110 110, 100 80 C 90 50, 110 40, 102 10"/>
+        </svg>
+
+        <div class="plate-main">
+          <svg class="plate-ring" viewBox="0 0 400 400" aria-hidden="true">
+            <circle cx="200" cy="200" r="196" class="plate-ring-outer"/>
+            <circle cx="200" cy="200" r="172" class="plate-ring-mid"/>
+          </svg>
+          <div class="plate-photo">
+            <img src="Assest/fo_under_100kb_11zon.webp" alt="Fresh Italian pasta and pizza spread, ready to order" loading="eager">
+          </div>
+        </div>
+
+        
+        <div class="hero-bubble hb-1" data-depth="40"><img src="Assest/fo1_under_100kb_11zon.webp" alt="Pizza slice pulled from a takeout box" loading="eager"></div>
+        <div class="hero-bubble hb-2" data-depth="65"><img src="Assest/fo2_under_100kb_11zon.webp" alt="Crispy chicken burger with fries" loading="eager"></div>
+        <div class="hero-bubble hb-3" data-depth="30"><img src="Assest/fo3_11zon.webp" alt="Creamy layered cheesecake" loading="eager"></div>
+        <div class="hero-bubble hb-4" data-depth="55"><img src="Assest/fo4_11zon.webp" alt="Fresh brewed coffee in glass" loading="eager"></div>
+        <div class="orbit-chip chip-1"><i class="fa-solid fa-bolt"></i> 18 min delivery</div>
+        <div class="orbit-chip chip-2"><i class="fa-solid fa-star"></i> 4.9 rated</div>
+        <div class="orbit-chip chip-3"><i class="fa-solid fa-leaf"></i> Fresh, daily</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span></span> Scroll</div>
+</section>
+
+<!-- ===================== 2. MARQUEE / TRUST STRIP ===================== -->
+<section class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span><i class="fa-solid fa-bowl-food"></i> Handpicked Kitchens</span>
+      <span><i class="fa-solid fa-truck-fast"></i> Live Order Tracking</span>
+      <span><i class="fa-solid fa-shield-heart"></i> Verified Hygiene Score</span>
+      <span><i class="fa-solid fa-tags"></i> Zero Surge Pricing</span>
+      <span><i class="fa-solid fa-mobile-screen"></i> One-Tap Reorder</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span><i class="fa-solid fa-bowl-food"></i> Handpicked Kitchens</span>
+      <span><i class="fa-solid fa-truck-fast"></i> Live Order Tracking</span>
+      <span><i class="fa-solid fa-shield-heart"></i> Verified Hygiene Score</span>
+      <span><i class="fa-solid fa-tags"></i> Zero Surge Pricing</span>
+      <span><i class="fa-solid fa-mobile-screen"></i> One-Tap Reorder</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip" aria-label="Dish gallery">
+  <div class="photo-track" id="photoTrack">
+    <div class="photo-group"><img src="Assest/fo_under_100kb_11zon.webp"><img src="Assest/fo5_11zon.webp" loading="lazy"><img src="Assest/fo6_11zon.webp" alt="Delicious dish 3" loading="lazy"><img src="Assest/fo7_11zon.webp" alt="Delicious dish 4" loading="lazy"><img src="Assest/fo8_11zon.webp" alt="Delicious dish 5" loading="lazy"><img src="Assest/fo2_under_100kb_11zon.webp" alt="Delicious dish 6" loading="lazy"><img src="Assest/fo3_11zon.webp" alt="Delicious dish 7" loading="lazy"><img src="Assest/fo9_11zon.webp" alt="Delicious dish 8" loading="lazy"><img src="Assest/fo10_11zon.webp" alt="Delicious dish 9" loading="lazy"><img src="Assest/fo11_11zon.webp" alt="Delicious dish 10" loading="lazy"></div>
+    <div class="photo-group" aria-hidden="true"><img src="Assest/fo_under_100kb_11zon.webp" alt="Delicious dish 1" loading="lazy"><img src="Assest/fo5_11zon.webp" alt="Delicious dish 2" loading="lazy"><img src="Assest/fo6_11zon.webp" alt="Delicious dish 3" loading="lazy"><img src="Assest/fo7_11zon.webp" alt="Delicious dish 4" loading="lazy"><img src="Assest/fo8_11zon.webp" alt="Delicious dish 5" loading="lazy"><img src="Assest/fo2_under_100kb_11zon.webp" alt="Delicious dish 6" loading="lazy"><img src="Assest/fo3_11zon.webp" alt="Delicious dish 7" loading="lazy"><img src="Assest/fo9_11zon.webp" alt="Delicious dish 8" loading="lazy"><img src="Assest/fo10_11zon.webp" alt="Delicious dish 9" loading="lazy"><img src="Assest/fo11_11zon.webp" alt="Delicious dish 10" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- ===================== 3. ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-visual" data-aos="fade-right" data-aos-duration="900">
+      <div class="about-card about-card--main" data-reveal>
+        <img src="Assest/fo6_11zon.webp" alt="Fine dining beef steak plated with vegetables and sauce" loading="lazy">
+        <div class="about-card-badge"><i class="fa-solid fa-award"></i><div><strong>7 yrs</strong><span>in food-tech</span></div></div>
+      </div>
+      <div class="about-card about-card--tiny" data-parallax="-30"><img src="Assest/fo12_11zon.webp" alt="Hands taking a pizza slice from a box" loading="lazy"></div>
+      <div class="about-card about-card--small" data-aos="fade-up" data-aos-delay="200">
+        <img src="Assest/fo13_11zon.webp" alt="Fresh penne pasta salad with cherry tomatoes and arugula" loading="lazy">
+      </div>
+    </div>
+
+    <div class="about-copy" data-aos="fade-left" data-aos-duration="900">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-circle-info"></i> About Stackly</p>
+      <h2 class="section-title">We built the ordering experience we always wanted.</h2>
+      <p class="section-text reveal-words">Stackly began as a frustration with slow, clunky food apps. Today we work with over a thousand kitchens — from neighbourhood diners to award-winning chefs — to get real food to real people, fast, without losing the craft behind every plate.</p>
+
+      <div class="about-points">
+        <div class="about-point">
+          <i class="fa-solid fa-check"></i>
+          <div><strong>Curated, not crowded</strong><span>Every restaurant is vetted for quality and consistency.</span></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-check"></i>
+          <div><strong>Transparent pricing</strong><span>What you see at checkout is what you pay. Always.</span></div>
+        </div>
+        <div class="about-point">
+          <i class="fa-solid fa-check"></i>
+          <div><strong>Built for speed</strong><span>Smart routing gets your order out the kitchen door faster.</span></div>
+        </div>
+      </div>
+
+     <button class="btn btn-outline" onclick="window.location.href='404.html';">
+  Our Story <i class="fa-solid fa-arrow-right"></i>
+</button>
+  </div>
+  </div>
+</section>
+
+<!-- ===================== 4. HOW IT WORKS ===================== -->
+<section class="how" id="how">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag"><i class="fa-solid fa-route"></i> The process</p>
+      <h2 class="section-title section-title--light">From craving to doorstep in three moves.</h2>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="how-step-photo"><img src="Assest/fo14_11zon.webp" alt="Browsing menus" loading="lazy"></div>
+        <div class="how-step-num">01</div>
+        <div class="how-step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Browse & choose</h3>
+        <p>Explore menus from kitchens near you, filtered by cuisine, mood, or diet.</p>
+      </div>
+      <div class="how-step-line" aria-hidden="true"></div>
+      <div class="how-step" data-aos="fade-up" data-aos-delay="150">
+        <div class="how-step-photo"><img src="Assest/fo1_under_100kb_11zon.webp" alt="Ordering takeout pizza" loading="lazy"></div>
+        <div class="how-step-num">02</div>
+        <div class="how-step-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+        <h3>Order & pay</h3>
+        <p>Checkout in one tap with saved cards, wallets, or pay on delivery.</p>
+      </div>
+      <div class="how-step-line" aria-hidden="true"></div>
+      <div class="how-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="how-step-photo"><img src="Assest/fo15_11zon.webp" alt="Burger delivered fresh" loading="lazy"></div>
+        <div class="how-step-num">03</div>
+        <div class="how-step-icon"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3>Track & taste</h3>
+        <p>Watch your order live, from the kitchen pass to your front door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. MENU / SERVICE ===================== -->
+<section class="menu" id="menu">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-book-open"></i> Our service</p>
+      <h2 class="section-title">A menu for every kind of hungry.</h2>
+    </div>
+
+    <div class="menu-tabs" data-aos="fade-up" data-aos-delay="100">
+      <button class="menu-tab active" data-tab="starters"><i class="fa-solid fa-seedling"></i> Starters</button>
+      <button class="menu-tab" data-tab="mains"><i class="fa-solid fa-drumstick-bite"></i> Mains</button>
+      <button class="menu-tab" data-tab="drinks"><i class="fa-solid fa-martini-glass-citrus"></i> Drinks</button>
+      <button class="menu-tab" data-tab="desserts"><i class="fa-solid fa-ice-cream"></i> Desserts</button>
+    </div>
+
+    <div class="menu-panels">
+
+      <div class="menu-panel active" data-panel="starters">
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="0">
+          <div class="menu-card-img"><img src="Assest/fo8_11zon.webp" alt="Charred Corn Bruschetta" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Charred Corn Bruschetta</h4><p>Sourdough, smoked corn, whipped ricotta</p><span class="price">$8.50</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card-img"><img src="Assest/fo16_11zon.webp" alt="Miso Butter Edamame" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Miso Butter Edamame</h4><p>Charred, sea salt, chili threads</p><span class="price">$6.00</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-card-img"><img src="Assest/fo1_under_100kb_11zon.webp" alt="Roasted Beet Carpaccio" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Roasted Beet Carpaccio</h4><p>Citrus, pistachio, goat cheese</p><span class="price">$9.00</span></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="mains">
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="0">
+          <div class="menu-card-img"><img src="Assest/fo5_11zon.webp" alt="Truffle Tagliatelle" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Truffle Tagliatelle</h4><p>Fresh pasta, black truffle, parmesan cream</p><span class="price">$18.00</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card-img"><img src="Assest/fo6_11zon.webp" alt="Charcoal Grilled Ribeye" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Charcoal Grilled Ribeye</h4><p>Herb butter, roasted garlic, jus</p><span class="price">$26.00</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-card-img"><img src="Assest/fo10_11zon.webp" alt="Miso Glazed Salmon" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Miso Glazed Salmon</h4><p>Bok choy, jasmine rice, sesame</p><span class="price">$21.00</span></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="drinks">
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="0">
+          <div class="menu-card-img"><img src="Assest/fo4_11zon.webp" alt="Smoked Old Fashioned cocktail" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Smoked Old Fashioned</h4><p>Bourbon, bitters, charred orange</p><span class="price">$12.00</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card-img"><img src="Assest/fo9_11zon.webp" alt="Yuzu Spritz drink" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Yuzu Spritz</h4><p>Sparkling, yuzu, fresh mint</p><span class="price">$9.50</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-card-img"><img src="Assest/fo17_11zon.webp" alt="Cold Brew Tonic" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Cold Brew Tonic</h4><p>House cold brew, tonic, orange peel</p><span class="price">$7.00</span></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" data-panel="desserts">
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="0">
+          <div class="menu-card-img"><img src="Assest/fo3_11zon.webp" alt="Basque Burnt Cheesecake" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Basque Burnt Cheesecake</h4><p>Vanilla bean, berry compote</p><span class="price">$8.00</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card-img"><img src="Assest/fo18_11zon.webp" alt="Molten Dark Chocolate dessert" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Molten Dark Chocolate</h4><p>Sea salt caramel, vanilla gelato</p><span class="price">$9.50</span></div>
+        </div>
+        <div class="menu-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-card-img"><img src="Assest/fo11_11zon.webp" alt="Matcha Tiramisu dessert" loading="lazy"
+     onclick="window.location.href='404.html';" style="cursor:pointer;"></div>
+          <div class="menu-card-body"><h4>Matcha Tiramisu</h4><p>Espresso soaked, ceremonial matcha</p><span class="price">$8.50</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. FEATURED DISHES ===================== -->
+<section class="featured" id="featured">
+  <div class="section-inner">
+    <div class="section-head-row" data-aos="fade-up">
+      <div>
+        <p class="eyebrow-tag"><i class="fa-solid fa-fire"></i> Trending this week</p>
+        <h2 class="section-title section-title--light">Dishes everyone's ordering.</h2>
+      </div>
+     <button class="btn btn-ghost btn-ghost--light" onclick="window.location.href='404.html';">
+  View full menu <i class="fa-solid fa-arrow-right"></i>
+</button>
+ </div>
+
+    <div class="featured-track">
+      <div class="featured-card" data-tilt>
+        <div class="featured-img"><img src="Assest/fo10_11zon.webp" alt="Wagyu Steak Bowl" loading="lazy"></div>
+        <div class="featured-tag"><i class="fa-solid fa-star"></i> 4.9</div>
+        <h4>Wagyu Steak Bowl</h4>
+        <p>Charred wagyu, jasmine rice, chili oil</p>
+        <div class="featured-foot"><span>$24.00</span><button class="icon-btn" onclick="window.location.href='404.html';">
+  <i class="fa-solid fa-plus"></i>
+</button></div>
+      </div>
+      <div class="featured-card" data-tilt>
+        <div class="featured-img"><img src="Assest/fo5_11zon.webp" alt="Truffle Mushroom Ramen" loading="lazy"></div>
+        <div class="featured-tag"><i class="fa-solid fa-star"></i> 4.8</div>
+        <h4>Truffle Mushroom Ramen</h4>
+        <p>Rich broth, soft egg, roasted mushroom</p>
+        <div class="featured-foot"><span>$16.50</span><button class="icon-btn" onclick="window.location.href='404.html';">
+  <i class="fa-solid fa-plus"></i>
+</button></div>
+      </div>
+      <div class="featured-card" data-tilt>
+        <div class="featured-img"><img src="Assest/fo7_11zon.webp" alt="Neapolitan Margherita pizza" loading="lazy"></div>
+        <div class="featured-tag"><i class="fa-solid fa-star"></i> 5.0</div>
+        <h4>Neapolitan Margherita</h4>
+        <p>San marzano, fior di latte, basil</p>
+        <div class="featured-foot"><span>$14.00</span><button class="icon-btn" onclick="window.location.href='404.html';">
+  <i class="fa-solid fa-plus"></i>
+</button></div>
+      </div>
+      <div class="featured-card" data-tilt>
+        <div class="featured-img"><img src="Assest/fo2_under_100kb_11zon.webp" alt="Korean Fried Chicken" loading="lazy"></div>
+        <div class="featured-tag"><i class="fa-solid fa-star"></i> 4.7</div>
+        <h4>Korean Fried Chicken</h4>
+        <p>Gochujang glaze, pickled radish</p>
+        <div class="featured-foot"><span>$17.00</span><button class="icon-btn" onclick="window.location.href='404.html';">
+  <i class="fa-solid fa-plus"></i>
+</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="gallery">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-camera"></i> Fresh from the kitchen</p>
+      <h2 class="section-title">Real plates. Real partners. Real appetite.</h2>
+    </div>
+ 
+    
+<div class="gallery-grid">
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo19_11zon.webp" alt="Top view of pizzas and pasta" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo6_11zon.webp" alt="Plated beef steak" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo8_11zon.webp" alt="Colorful quinoa vegetable bowl" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo5_11zon.webp" alt="Penne with spicy red sauce" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo20_11zon.webp" alt="Crispy chicken strips and fries" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo18_11zon.webp" alt="Pavlova dessert" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo21_11zon.webp" alt="Friends sharing a pizza" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo22_11zon.webp" alt="Chicken tenders with cheese sauce" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+
+  <figure class="g-item" data-reveal>
+    <img src="Assest/fo9_11zon.webp" alt="Latte art coffee" loading="lazy">
+    <figcaption onclick="window.location.href='404.html';">
+      <i class="fa-solid fa-plus"></i>
+    </figcaption>
+  </figure>
+</div>
+
+
+
+  </div>
+</section>
+
+<!-- ===================== 7. WHY CHOOSE US ===================== -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-heart"></i> Why Stackly</p>
+      <h2 class="section-title">Ordering food shouldn't feel like a chore.</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card why-card--big" data-aos="fade-up" style="--bg:url('Assest/fo1_under_100kb_11zon.webp')">
+        <i class="fa-solid fa-gauge-high"></i>
+        <h3>Lightning-fast dispatch</h3>
+        <p>Our routing engine matches you to the nearest rider the instant a kitchen confirms your order — most orders leave within 6 minutes.</p>
+      </div>
+      <div class="why-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-lock"></i>
+        <h3>Secure checkout</h3>
+        <p>Bank-grade encryption on every transaction.</p>
+      </div>
+      <div class="why-card" data-tilt data-aos="fade-up" data-aos-delay="150">
+        <i class="fa-solid fa-headset"></i>
+        <h3>24/7 support</h3>
+        <p>Real humans, always one tap away.</p>
+      </div>
+      <div class="why-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Eco packaging</h3>
+        <p>100% compostable containers, city-wide.</p>
+      </div>
+      <div class="why-card why-card--wide" data-aos="fade-up" data-aos-delay="250">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <h3>Live GPS tracking</h3>
+        <p>Watch your rider move on the map in real time, down to the last turn before your door.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 8. APP DOWNLOAD CTA ===================== -->
+<section class="app-cta" id="app">
+  <div class="section-inner app-cta-grid">
+    <div class="app-cta-copy" data-aos="fade-right">
+      <p class="eyebrow-tag"><i class="fa-solid fa-mobile-screen-button"></i> Take it with you</p>
+      <h2 class="section-title section-title--light">Your favorite kitchens, in your pocket.</h2>
+      <p class="section-text section-text--light">Download the Stackly app for exclusive drops, faster reordering, and delivery updates that actually tell you something.</p>
+      <div class="store-badges">
+       <button class="store-badge" onclick="window.location.href='404.html';">
+  <i class="fa-brands fa-apple"></i>
+  <div>
+    <span>Download on the</span>
+    <strong>App Store</strong>
+  </div>
+</button>
+
+<button class="store-badge" onclick="window.location.href='404.html';">
+  <i class="fa-brands fa-google-play"></i>
+  <div>
+    <span>Get it on</span>
+    <strong>Google Play</strong>
+  </div>
+</button>
+</div>
+    </div>
+    <div class="app-cta-visual" data-aos="fade-left">
+      <div class="phone-mock">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-row phone-row--head">
+            <span></span><span></span>
+          </div>
+          <div class="phone-order-card">
+            <div class="phone-order-thumb" style="background-image:url(Assest/fo25.webp)"></div>
+            <div class="phone-order-lines"><i></i><i></i></div>
+          </div>
+          <div class="phone-order-card">
+            <div class="phone-order-thumb" style="background-image:url(Assest/fo26.webp)"></div>
+            <div class="phone-order-lines"><i></i><i></i></div>
+          </div>
+          <div class="phone-track-pill"><i class="fa-solid fa-location-dot"></i> Arriving in 9 min</div>
+        </div>
+      </div>
+      <div class="floating-icon fi-1"><i class="fa-solid fa-pepper-hot"></i></div>
+      <div class="floating-icon fi-2"><i class="fa-solid fa-fish"></i></div>
+      <div class="floating-icon fi-3"><i class="fa-solid fa-carrot"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9. TESTIMONIALS ===================== -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-comment-dots"></i> Diner stories</p>
+      <h2 class="section-title">Loved by people who love food.</h2>
+    </div>
+
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-card active">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Stackly changed how my family eats on weeknights. The tracking map is oddly satisfying to watch."</p>
+        <div class="testi-person"><div class="testi-avatar"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/></svg></div><div><strong>Amara Osei</strong><span>Regular diner, 3 years</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"As a restaurant owner, Stackly's dashboard gave us clarity we never had — orders, feedback, everything in one place."</p>
+        <div class="testi-person"><div class="testi-avatar"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/></svg></div><div><strong>Diego Marín</strong><span>Owner, Casa Marín</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+        <p>"Fast, honest pricing, and the food actually arrives hot. That combination is rarer than it should be."</p>
+        <div class="testi-person"><div class="testi-avatar"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/></svg></div><div><strong>Priya Nair</strong><span>Regular diner, 1 year</span></div></div>
+      </div>
+    </div>
+
+    <div class="testi-dots" id="testiDots"></div>
+  </div>
+</section>
+
+<!-- ===================== 10. BLOG ===================== -->
+<section class="blog" id="blog">
+  <div class="section-inner">
+    <div class="section-head-row" data-aos="fade-up">
+      <div>
+        <p class="eyebrow-tag"><i class="fa-solid fa-newspaper"></i> From the journal</p>
+        <h2 class="section-title section-title--light">Stories from the kitchen and beyond.</h2>
+      </div>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card blog-card--main" data-aos="fade-up">
+        <div class="blog-img"><img src="Assest/fo23_11zon.webp" alt="Outdoor dining scene with pizzas and wine" loading="lazy"></div>
+        <span class="blog-cat">Culture</span>
+        <h3>Inside the ghost kitchens feeding your city at 2am</h3>
+        <p>A look at the delivery-only spaces reshaping how restaurants operate — and what it means for the food on your table.</p>
+        <a href="404.html" class="blog-link">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <article class="blog-card" data-tilt data-aos="fade-up" data-aos-delay="100">
+        <div class="blog-img"><img src="Assest/fo21_11zon.webp" alt="Friends sharing a meal together" loading="lazy"></div>
+        <span class="blog-cat">Guides</span>
+        <h3>Five spice blends worth keeping in your pantry</h3>
+        <a href="404.html" class="blog-link">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <article class="blog-card" data-tilt data-aos="fade-up" data-aos-delay="200">
+        <div class="blog-img"><img src="Assest/fo24_11zon.webp" alt="Sliced grilled steak served on a wooden board" loading="lazy"></div>
+        <span class="blog-cat">Partners</span>
+        <h3>How Casa Marín tripled weekend orders</h3>
+        <a href="404.html" class="blog-link">Read story <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11. CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-grid">
+    <div class="contact-copy" data-aos="fade-right">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-envelope"></i> Get in touch</p>
+      <h2 class="section-title">Questions, partnerships, or just hungry?</h2>
+      <p class="section-text">Our team replies within a few hours, every day of the week.</p>
+
+      <div class="contact-info">
+        <div class="contact-info-item"><i class="fa-solid fa-phone"></i><span>+1 (555) 213-4470</span></div>
+        <div class="contact-info-item"><i class="fa-solid fa-envelope-open-text"></i><span>hello@stackly.app</span></div>
+        <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><span>221 Harbor Lane, Portside District</span></div>
+      </div>
+
+      <div class="social-row">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <div class="contact-photo" data-reveal><img src="Assest/fo21_11zon.webp" alt="Friends enjoying a shared meal" loading="lazy"></div>
+    </div>
+
+    <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate>
+
+  <div class="form-row">
+    <label>
+      First Name
+      <input type="text" id="firstName" placeholder="Your first name">
+      <span class="error-message"></span>
+    </label>
+
+    <label>
+      Last Name
+      <input type="text" id="lastName" placeholder="Your last name">
+      <span class="error-message"></span>
+    </label>
+  </div>
+
+  <label>
+    Email Address
+    <input type="email" id="email" placeholder="you@example.com">
+    <span class="error-message"></span>
+  </label>
+
+  <label>
+    Subject
+    <select id="subject">
+      <option value="">Select a subject</option>
+      <option value="general">General enquiry</option>
+      <option value="booking">Booking</option>
+      <option value="support">Support</option>
+      <option value="feedback">Feedback</option>
+    </select>
+    <span class="error-message"></span>
+  </label>
+
+  <label>
+    How can we help you?
+    <textarea id="message" rows="4" placeholder="Tell us more..."></textarea>
+    <span class="error-message"></span>
+  </label>
+
+  <button type="submit" class="btn btn-primary btn-full">
+    Send Message <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+  <p class="form-error" id="formError"></p>
+
+</form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-top section-inner">
+    <div class="footer-brand">
+      <button type="button" class="footer-logo-btn" onclick="window.location.href='index.html';">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+</button>
+      <p>Great food, delivered with care. Stackly partners with kitchens that put craft first.</p>
+      <div class="social-row">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="service.html">Careers</a>
+      <a href="contact.html">Press</a>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="404.html">Menu</a>
+      <a href="404.html">How it works</a>
+      <a href="404.html">Mobile app</a>
+      <a href="404.html">Trending</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="404.html">Help center</a>
+      <a href="404.html">Contact us</a>
+      <a href="404.html">Partner with us</a>
+      <a href="404.html">Terms</a>
+    </div>
+    <div class="footer-col footer-col--newsletter">
+      <h5>Stay in the loop</h5>
+     <form class="newsletter-form" onsubmit="return validateNewsletter(this);">
+  <input type="email" placeholder="Your email address" required>
+  <button type="submit">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Stackly, Inc. All rights reserved.</span>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+
+
+<script>
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  const fields = [
+    {
+      id: "firstName",
+      message: "Please enter your first name."
+    },
+    {
+      id: "lastName",
+      message: "Please enter your last name."
+    },
+    {
+      id: "email",
+      message: "Email address is required."
+    },
+    {
+      id: "subject",
+      message: "Please select a subject."
+    },
+    {
+      id: "message",
+      message: "Please let us know how we can help."
+    }
+  ];
+
+  // Clear previous errors
+  fields.forEach(function (field) {
+    const input = document.getElementById(field.id);
+    const error = input.parentElement.querySelector(".error-message");
+
+    input.classList.remove("error");
+    error.classList.remove("show");
+    error.textContent = "";
+  });
+
+  document.getElementById("formError").classList.remove("show");
+
+  // Validate
+  fields.forEach(function (field) {
+    const input = document.getElementById(field.id);
+    const error = input.parentElement.querySelector(".error-message");
+
+    if (input.value.trim() === "") {
+      input.classList.add("error");
+      error.textContent = field.message;
+      error.classList.add("show");
+      isValid = false;
+    }
+
+    // Email validation
+    if (field.id === "email" && input.value.trim() !== "") {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailPattern.test(input.value.trim())) {
+        input.classList.add("error");
+        error.textContent = "Please enter a valid email address.";
+        error.classList.add("show");
+        isValid = false;
+      }
+    }
+  });
+
+  // Show general error
+  if (!isValid) {
+    const formError = document.getElementById("formError");
+    formError.textContent = "Please fix the errors above before submitting.";
+    formError.classList.add("show");
+    return;
+  }
+
+  // Mark that form should be cleared when user comes back
+  sessionStorage.setItem("clearContactForm", "true");
+
+  // Redirect to 404
+  window.location.href = "404.html";
+});
+
+
+// Clear form when returning from 404.html
+window.addEventListener("pageshow", function () {
+  if (sessionStorage.getItem("clearContactForm") === "true") {
+
+    contactForm.reset();
+
+    // Remove error styles/messages
+    contactForm.querySelectorAll(".error").forEach(function (element) {
+      element.classList.remove("error");
+    });
+
+    contactForm.querySelectorAll(".error-message").forEach(function (element) {
+      element.textContent = "";
+      element.classList.remove("show");
+    });
+
+    const formError = document.getElementById("formError");
+
+    if (formError) {
+      formError.textContent = "";
+      formError.classList.remove("show");
+    }
+
+    sessionStorage.removeItem("clearContactForm");
+  }
+});
+</script>
+
+<script> function validateNewsletter(form) { const email = form.querySelector('input[type="email"]'); const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!emailPattern.test(email.value.trim())) { email.focus(); return false; } window.location.href = '404.html'; return false; } /* Clear newsletter field when returning to this page */ window.addEventListener('pageshow', function () { document.querySelectorAll('.newsletter-form input[type="email"]').forEach(function (input) { input.value = ''; }); }); </script>
+</body>
+</html>

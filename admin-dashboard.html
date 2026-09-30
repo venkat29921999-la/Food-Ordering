@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin dashboard — Stackly</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script>document.documentElement.classList.add('js');</script>
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('stackly_session')||sessionStorage.getItem('stackly_session')||'null');if(!s||s.role!=='admin'){location.replace('login.html');}}catch(e){location.replace('login.html');}})();</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-body" data-role="admin">
+<div class="dash">
+  <aside class="sidebar" id="sidebar" aria-label="Dashboard menu">
+    <a href="index.html" class="brand"><img src="Assest/logo-bone.webp" alt="Stackly logo" class="brand-logo"></a>
+    <nav class="side-nav"><button class="side-link active" data-view="overview"><i class="fa-solid fa-gauge-high"></i><span>Overview</span></button><button class="side-link" data-view="orders"><i class="fa-solid fa-bag-shopping"></i><span>All orders</span></button><button class="side-link" data-view="inbox"><i class="fa-solid fa-envelope"></i><span>Inbox</span><span class=badge id=inboxBadge hidden>0</span></button><button class="side-link" data-view="people"><i class="fa-solid fa-users"></i><span>Users</span></button><button class="side-link" data-view="settings"><i class="fa-solid fa-gear"></i><span>Settings</span></button></nav>
+    <div class="side-user">
+      <div class="su-row"><span class="avatar" id="suAvatar">U</span><div class="su-info"><strong id="suName">User</strong><span class="role-tag">Admin</span></div></div>
+      <a href="index.html" class="logout-btn"><i class="fa-solid fa-house"></i> Back to home</a>
+      <button class="logout-btn logout"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+    </div>
+  </aside>
+  <div class="dash-overlay" id="dashOverlay"></div>
+
+  <div class="dash-main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="top-title"><h1 id="pageTitle">Overview</h1><p id="pageSub"></p></div>
+      <div class="top-actions">
+        <button class="icon-pill" id="bellBtn" aria-label="Open inbox"><i class="fa-solid fa-bell"></i><span class="dot" id="bellDot" hidden>0</span></button>
+        <button class="icon-pill" id="topAvatarBtn" aria-label="Open settings"><span class="avatar" id="topAvatar" style="width:38px;height:38px;font-size:13px">U</span></button>
+      </div>
+    </header>
+    <main>
+      <section class="view active" id="view-overview"></section>
+      <section class="view" id="view-orders"></section>
+      <section class="view" id="view-inbox"></section>
+      <section class="view" id="view-people"></section>
+      <section class="view" id="view-settings"></section>
+    </main>
+  </div>
+</div>
+
+<div class="modal" id="composeModal" role="dialog" aria-modal="true" aria-label="Compose message">
+  <div class="modal-card">
+    <h3>New message</h3>
+    <form id="composeForm" novalidate>
+      <div class="field"><input id="cTo" type="email" placeholder=" " autocomplete="off"><label for="cTo">To (email)</label><small class="err"></small></div>
+      <div class="field"><input id="cSub" type="text" placeholder=" " autocomplete="off"><label for="cSub">Subject</label><small class="err"></small></div>
+      <textarea id="cBody" placeholder="Write your message…" aria-label="Message"></textarea>
+      <div class="modal-actions"><button type="button" class="btn-plain" id="composeClose">Cancel</button><button type="submit" class="btn btn-primary"><span class="btn-label">Send <i class="fa-solid fa-paper-plane"></i></span></button></div>
+    </form>
+  </div>
+</div>
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

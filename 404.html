@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Stackly</title>
+<meta name="description" content="This page seems to have gone missing. Head back home or return to where you were.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="404.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <img src="Assest/logo-bone.webp" alt="Stackly" class="preloader-logo">
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===================== LOGO ONLY (no nav, no footer on this page) ===================== -->
+<header class="e404-topbar">
+  <a href="index.html" class="e404-topbar-brand">
+    <img src="Assest/logo-bone.webp" alt="Stackly logo" class="e404-topbar-logo">
+  </a>
+</header>
+
+<main class="e404-page">
+<section class="e404-hero">
+  <div class="e404-bg" aria-hidden="true"><img src="https://images.pexels.com/photos/6223193/pexels-photo-6223193.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;fm=webp" alt="" loading="eager"></div>
+
+  <!-- drifting food-crumb particles -->
+  <div class="e404-crumbs" aria-hidden="true">
+    <i class="fa-solid fa-pizza-slice"></i>
+    <i class="fa-solid fa-burger"></i>
+    <i class="fa-solid fa-cookie"></i>
+    <i class="fa-solid fa-drumstick-bite"></i>
+    <i class="fa-solid fa-lemon"></i>
+    <i class="fa-solid fa-carrot"></i>
+    <i class="fa-solid fa-pepper-hot"></i>
+    <i class="fa-solid fa-mug-saucer"></i>
+  </div>
+
+  <div class="e404-inner">
+    <div class="e404-illustration" aria-hidden="true">
+      <svg viewBox="0 0 220 160" class="e404-bowl-svg">
+        <ellipse class="e404-shadow" cx="110" cy="146" rx="58" ry="8"/>
+        <g class="e404-steam">
+          <path d="M70 70 C62 58, 78 50, 70 38 C64 30, 74 22, 70 12" class="steam s1"/>
+          <path d="M96 70 C88 58, 104 50, 96 38 C90 30, 100 22, 96 12" class="steam s2"/>
+          <path d="M122 70 C114 58, 130 50, 122 38 C116 30, 126 22, 122 12" class="steam s3"/>
+        </g>
+        <g class="e404-bowl">
+          <ellipse cx="70" cy="112" rx="46" ry="14" fill="var(--gold-2)"/>
+          <path d="M24 112 Q70 138 116 112 L112 126 Q70 148 28 126 Z" fill="var(--gold)"/>
+          <path class="noodle n1" d="M96 108 Q130 96 152 116 T190 122" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round"/>
+          <path class="noodle n2" d="M100 116 Q136 110 158 128 T196 130" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="150" cy="112" r="5" fill="#c0432f"/>
+          <circle cx="172" cy="124" r="4" fill="#c0432f"/>
+          <circle cx="130" cy="122" r="3.5" fill="#c0432f"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="e404-num" aria-label="404">
+      <span>4</span><span>0</span><span>4</span>
+    </p>
+
+    <h1 class="e404-title">Looks like this order got lost.</h1>
+    <p class="e404-sub">The page you're looking for isn't on the menu. It may have been moved, renamed, or never existed in the first place.</p>
+
+    <div class="e404-actions">
+      <a href="index.html" class="e404-btn e404-btn--primary">
+        <i class="fa-solid fa-house"></i> Back to Home
+      </a>
+      <button type="button" class="e404-btn e404-btn--ghost" id="e404BackBtn">
+        <i class="fa-solid fa-arrow-left"></i> Go Back
+      </button>
+    </div>
+
+    <div class="e404-quicklinks">
+      <span>Or try one of these</span>
+      <div class="e404-quicklinks-row">
+        <a href="index.html#menu">Menu</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script src="404.js"></script>
+</body>
+</html>

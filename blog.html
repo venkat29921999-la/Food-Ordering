@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — Stackly Blog</title>
+<meta name="description" content="Food culture, kitchen secrets, and the people behind every plate — the Stackly journal.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <img src="Assest/logo-bone.webp" alt="Stackly" class="preloader-logo">
+    <div class="preloader-bar"><span></span></div>
+  </div>
+</div>
+
+<!-- ===================== HEADER (unchanged) ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html#home" class="brand">
+      <img src="Assest/logo-bone.webp" alt="Stackly logo" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="service.html" class="nav-link" data-nav="menu">Service</a></li>
+        <li><a href="blog.html" class="nav-link active" data-nav="blog">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+<button class="btn-login" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="service.html" class="mobile-link">Service</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+<button class="btn-login btn-login--mobile" onclick="window.location.href='login.html';">
+  <i class="fa-solid fa-user"></i>
+  <span>Log In</span>
+</button>  </div>
+</header>
+
+<main>
+
+<!-- ===================== 1. MASTHEAD — curtain-wipe title + spinning orbit badge ===================== -->
+<section class="blogp-hero" id="blogHero">
+  <div class="blogp-hero-bg"><img src="Assest/fo_under_100kb_11zon.webp" alt="" aria-hidden="true" loading="eager"></div>
+  <div class="blogp-mesh" aria-hidden="true"></div>
+
+  <div class="blogp-badge" aria-hidden="true">
+    <svg viewBox="0 0 120 120">
+      <path id="blogpBadgeCircle" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0" fill="none"/>
+      <text><textPath href="#blogpBadgeCircle" startOffset="0%">NEW STORY EVERY WEEK • FRESH TAKES • </textPath></text>
+    </svg>
+    <div class="blogp-badge-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+  </div>
+
+  <div class="blogp-hero-inner">
+    <p class="eyebrow-tag" data-blogp="tag"><i class="fa-solid fa-newspaper"></i> The Stackly Journal</p>
+    <h1 class="blogp-title">
+      <span class="blogp-curtain-line"><span>Stories worth</span></span>
+      <span class="blogp-curtain-line"><span class="blogp-title-accent">savoring.</span></span>
+    </h1>
+    <p class="blogp-sub" data-blogp="tag">Food culture, kitchen secrets, and the people behind every plate — told one story at a time.</p>
+    <div class="blogp-hero-tags" data-blogp="tag">
+      <span>#FoodCulture</span><span>#ChefStories</span><span>#CityEats</span><span>#BehindTheMenu</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. FEATURED STORY — clip-path wipe + stroke-timer button ===================== -->
+<section class="blogp-featured" id="featuredStory">
+  <div class="section-inner blogp-featured-grid">
+    <div class="blogp-feat-visual">
+      <div class="blogp-feat-media" data-blogp-wipe>
+        <img src="Assest/fo23_11zon.webp" alt="Outdoor dining scene with pizzas and wine at dusk" loading="lazy">
+        <div class="blogp-feat-media-fade" aria-hidden="true"></div>
+        <button class="blogp-timer-btn" aria-label="6 minute read">
+          <svg viewBox="0 0 60 60" aria-hidden="true">
+            <circle class="track" cx="30" cy="30" r="26"></circle>
+            <circle class="ring" cx="30" cy="30" r="26"></circle>
+          </svg>
+          <span>6<small>MIN</small></span>
+        </button>
+      </div>
+      <div class="blogp-feat-float" data-aos="fade-up" data-aos-delay="200">
+        <img src="Assest/fo12_11zon.webp" alt="Hands taking a pizza slice from a delivery box" loading="lazy">
+      </div>
+    </div>
+    <div class="blogp-feat-copy" data-aos="fade-left">
+      <span class="blogp-feat-tag">Editor's pick</span>
+      <h2 class="section-title">The rise of the midnight kitchen: how ghost restaurants took over the city.</h2>
+      <p>Delivery-only spaces are quietly reshaping how restaurants operate. We spent a week inside three ghost kitchens to see what's really cooking after dark — and what it means for the food that lands on your table.</p>
+      <div class="blogp-feat-byline">
+        <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">A</text></svg>
+        <div><strong>Amara Osei</strong><span>Food Culture Editor · Sep 24</span></div>
+      </div>
+      <a href="404.html" class="blogp-feat-link">Read the full story <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3. CATEGORIES — filter tabs + shutter-split hover cards ===================== -->
+<section class="blogp-grid-section" id="blogCategories">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-layer-group"></i> Explore</p>
+      <h2 class="section-title">Browse by category.</h2>
+    </div>
+
+    <div class="blogp-filters">
+      <button class="blogp-filter active" data-filter="all">All</button>
+      <button class="blogp-filter" data-filter="culture">Culture</button>
+      <button class="blogp-filter" data-filter="guides">Guides</button>
+      <button class="blogp-filter" data-filter="recipes">Recipes</button>
+      <button class="blogp-filter" data-filter="partners">Partners</button>
+    </div>
+
+    <div class="blogp-cards" id="blogpCards">
+      <article class="blogp-card" data-cat="culture" data-aos="fade-up">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Culture</span>
+          <div class="half half-l"><img src="Assest/fo16_11zon.webp" alt="Top view of pizzas and pasta spread on a table" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo16_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>What a shared table really means, city to city</h3>
+          <p>A look at communal dining rituals from three continents, and why we keep coming back to them.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">A</text></svg><span>Amara Osei · 5 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blogp-card" data-cat="guides" data-aos="fade-up" data-aos-delay="80">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Guides</span>
+          <div class="half half-l"><img src="Assest/fo20_11zon.webp" alt="Crispy chicken strips and fries" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo20_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>Five spice blends worth keeping in your pantry</h3>
+          <p>Small jars, big flavor swings — the blends our partner chefs reach for first.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">P</text></svg><span>Priya Nair · 4 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blogp-card" data-cat="partners" data-aos="fade-up" data-aos-delay="160">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Partners</span>
+          <div class="half half-l"><img src="Assest/fo6_11zon.webp" alt="Plated beef steak with garnish" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo6_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>How Casa Marín tripled weekend orders</h3>
+          <p>A small dining-room team, one menu rework, and the data that changed their weekends.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">J</text></svg><span>Jonah Reyes · 6 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blogp-card" data-cat="recipes" data-aos="fade-up">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Recipes</span>
+          <div class="half half-l"><img src="Assest/fo8_11zon.webp" alt="Colorful quinoa vegetable bowl" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo8_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>The 20-minute grain bowl that never gets boring</h3>
+          <p>One base recipe, six swaps — a weeknight formula worth memorizing.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">P</text></svg><span>Priya Nair · 3 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blogp-card" data-cat="guides" data-aos="fade-up" data-aos-delay="80">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Guides</span>
+          <div class="half half-l"><img src="Assest/fo5_11zon.webp" alt="Penne pasta with spicy red sauce" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo5_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>Reading a menu like a line cook does</h3>
+          <p>The small wording cues that hint at how a dish is actually made.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">D</text></svg><span>Diego Marín · 5 min read</span></div>
+        </div>
+      </article>
+
+      <article class="blogp-card" data-cat="culture" data-aos="fade-up" data-aos-delay="160">
+        <div class="blogp-card-media">
+          <span class="blogp-card-tag">Culture</span>
+          <div class="half half-l"><img src="Assest/fo21_11zon.webp" alt="Friends sharing a pizza together" loading="lazy"></div>
+          <div class="half half-r"><img src="Assest/fo21_11zon.webp" alt="" loading="lazy" aria-hidden="true"></div>
+        </div>
+        <div class="blogp-card-body">
+          <h3>Why we still crave a table full of strangers</h3>
+          <p>On pop-up supper clubs and the quiet appeal of eating with people you just met.</p>
+          <div class="blogp-card-meta"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/><text x="30" y="38" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">A</text></svg><span>Amara Osei · 4 min read</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. TRENDING — drag-snap carousel, center-scale, scroll progress ===================== -->
+<section class="blogp-trend" id="trending">
+  <div class="section-inner section-head-row" data-aos="fade-up">
+    <div>
+      <p class="eyebrow-tag"><i class="fa-solid fa-fire"></i> Trending now</p>
+      <h2 class="section-title section-title--light">What everyone's reading.</h2>
+    </div>
+    <div class="blogp-trend-hint"><i class="fa-solid fa-arrows-left-right"></i> Drag to explore</div>
+  </div>
+
+  <div class="blogp-trend-track" id="blogpTrendTrack">
+    <div class="blogp-trend-card"><img src="Assest/fo16_11zon.webp" alt="Freshly plated gourmet dish" loading="lazy"><div class="blogp-trend-body"><span>Culture</span><h3>The chef's table trend, explained</h3></div></div>
+    <div class="blogp-trend-card"><img src="Assest/fo17_11zon.webp" alt="Colorful plated dish close up" loading="lazy"><div class="blogp-trend-body"><span>Recipes</span><h3>Weeknight dinners under 15 minutes</h3></div></div>
+    <div class="blogp-trend-card"><img src="Assest/fo33.webp" alt="Fresh dish served on a plate" loading="lazy"><div class="blogp-trend-body"><span>Guides</span><h3>A beginner's guide to knife skills</h3></div></div>
+    <div class="blogp-trend-card"><img src="Assest/fo18_11zon.webp" alt="Pavlova dessert plated" loading="lazy"><div class="blogp-trend-body"><span>Recipes</span><h3>Desserts that travel well for delivery</h3></div></div>
+    <div class="blogp-trend-card"><img src="Assest/fo11_11zon.webp" alt="Fresh dish served with garnish" loading="lazy"><div class="blogp-trend-body"><span>Partners</span><h3>Inside a kitchen during peak hour</h3></div></div>
+    <div class="blogp-trend-card"><img src="Assest/fo5_11zon.webp" alt="Delicious dish plated close up" loading="lazy"><div class="blogp-trend-body"><span>Culture</span><h3>Comfort food, redefined by a new generation</h3></div></div>
+  </div>
+  <div class="blogp-trend-progress"><span id="blogpTrendProgress"></span></div>
+</section>
+
+<!-- ===================== SNAPSHOTS — bento image strip ===================== -->
+<section class="blogp-snaps" id="snapshots">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-camera"></i> From the kitchen</p>
+      <h2 class="section-title">Snapshots, unfiltered.</h2>
+    </div>
+    <div class="blogp-snaps-grid">
+      <div class="blogp-snap" data-aos="zoom-in"><img src="Assest/fo2_under_100kb_11zon.webp" alt="Crispy chicken burger with fries" loading="lazy"><span>Line 3, 7pm</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="60"><img src="Assest/fo3_11zon.webp" alt="Creamy layered cheesecake" loading="lazy"><span>Pastry pass</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="120"><img src="Assest/fo9_11zon.webp" alt="Latte art coffee" loading="lazy"><span>Morning pour</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="180"><img src="Assest/fo10_11zon.webp" alt="Freshly prepared dish" loading="lazy"><span>Plating check</span></div>
+      <div class="blogp-snap blogp-snap--wide" data-aos="zoom-in" data-aos-delay="240"><img src="Assest/fo14_11zon.webp" alt="Browsing menus on a table" loading="lazy"><span>Sunday prep</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="300"><img src="Assest/fo1_under_100kb_11zon.webp" alt="Pizza slice pulled from a takeout box" loading="lazy"><span>Box fresh</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="360"><img src="Assest/fo15_11zon.webp" alt="Burger delivered fresh" loading="lazy"><span>Rider drop-off</span></div>
+      <div class="blogp-snap" data-aos="zoom-in" data-aos-delay="420"><img src="Assest/fo7_11zon.webp" alt="Friends sharing a meal together" loading="lazy"><span>Table for four</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 5. WRITERS — 3D flip cards ===================== -->
+<section class="blogp-writers" id="writers">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-pen-nib"></i> Behind the byline</p>
+      <h2 class="section-title">Meet the voices of the journal.</h2>
+    </div>
+
+    <div class="blogp-writers-grid">
+      <div class="blogp-flip" data-aos="fade-up">
+        <div class="blogp-flip-inner">
+          <div class="blogp-flip-front">
+            <svg class="blogp-flip-avatar" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="39" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">A</text></svg>
+            <h4>Amara Osei</h4><span>Food Culture Editor</span>
+            <div class="blogp-flip-stat"><i class="fa-solid fa-pen"></i> 32 stories</div>
+          </div>
+          <div class="blogp-flip-back">
+            <p>Writes about dining rituals and the stories behind shared tables. Three years covering the city's food scene.</p>
+            <div class="social-row"><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blogp-flip" data-aos="fade-up" data-aos-delay="80">
+        <div class="blogp-flip-inner">
+          <div class="blogp-flip-front">
+            <svg class="blogp-flip-avatar" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/><text x="30" y="39" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">D</text></svg>
+            <h4>Diego Marín</h4><span>Kitchen Correspondent</span>
+            <div class="blogp-flip-stat"><i class="fa-solid fa-pen"></i> 21 stories</div>
+          </div>
+          <div class="blogp-flip-back">
+            <p>Reports from inside partner kitchens — the systems, the pressure, and the craft that rarely gets seen.</p>
+            <div class="social-row"><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blogp-flip" data-aos="fade-up" data-aos-delay="160">
+        <div class="blogp-flip-inner">
+          <div class="blogp-flip-front">
+            <svg class="blogp-flip-avatar" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/><text x="30" y="39" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">P</text></svg>
+            <h4>Priya Nair</h4><span>Recipe Developer</span>
+            <div class="blogp-flip-stat"><i class="fa-solid fa-pen"></i> 45 stories</div>
+          </div>
+          <div class="blogp-flip-back">
+            <p>Builds the weeknight recipes and pantry guides. Believes a good 20-minute meal beats a great 2-hour one.</p>
+            <div class="social-row"><a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blogp-flip" data-aos="fade-up" data-aos-delay="240">
+        <div class="blogp-flip-inner">
+          <div class="blogp-flip-front">
+            <svg class="blogp-flip-avatar" viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/><text x="30" y="39" text-anchor="middle" font-family="Manrope" font-weight="800" font-size="22" fill="#15120E">J</text></svg>
+            <h4>Jonah Reyes</h4><span>Partnerships Writer</span>
+            <div class="blogp-flip-stat"><i class="fa-solid fa-pen"></i> 18 stories</div>
+          </div>
+          <div class="blogp-flip-back">
+            <p>Tells the growth stories of the kitchens on Stackly, from single-location to city-wide.</p>
+            <div class="social-row"><a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 6. SUBSCRIBE — morphing blob + checkmark draw ===================== -->
+<section class="blogp-subscribe" id="subscribe">
+  <div class="blogp-blob" aria-hidden="true"></div>
+  <div class="blogp-subscribe-inner">
+    <div class="blogp-avatar-stack" aria-hidden="true">
+      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/></svg>
+      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/></svg>
+      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#C89B3C"/></svg>
+      <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="30" fill="#e0bc6a"/></svg>
+    </div>
+    <p class="eyebrow-tag"><i class="fa-solid fa-envelope-open-text"></i> Stay fed</p>
+    <h2 class="section-title section-title--light">Get the best stories, straight to your inbox.</h2>
+    <p class="section-text section-text--light">Join 12,400+ readers. One email a week — no spam, just genuinely good food writing.</p>
+
+    <form class="blogp-sub-form" id="blogpSubForm" onsubmit="return validateBlogNewsletter(this);"> <div class="blogp-input-wrap"> <input type="email" id="blogpSubEmail" placeholder="you@example.com" required> </div> <button type="submit"> <span>Subscribe</span> <svg class="check" viewBox="0 0 24 24" aria-hidden="true"> <path d="M4 12l5 5L20 6"/> </svg> </button> </form>
+    <p class="blogp-sub-success" id="blogpSubSuccess">You're on the list — welcome aboard! 🎉</p>
+  </div>
+</section>
+
+<!-- ===================== 7. LATEST READS — list + cursor-follow preview image ===================== -->
+<section class="blogp-latest" id="latest">
+  <div class="section-inner">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow-tag eyebrow-tag--dark"><i class="fa-solid fa-clock-rotate-left"></i> Fresh off the press</p>
+      <h2 class="section-title">Latest reads.</h2>
+    </div>
+
+    <div class="blogp-list" id="blogpList">
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo19_11zon.webp">
+        <span class="blogp-list-num">01</span>
+        <img class="blogp-list-thumb" src="Assest/fo19_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">What a shared table really means, city to city</span>
+        <span class="blogp-list-meta">Culture · 5 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo20_11zon.webp">
+        <span class="blogp-list-num">02</span>
+        <img class="blogp-list-thumb" src="Assest/fo20_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">Five spice blends worth keeping in your pantry</span>
+        <span class="blogp-list-meta">Guides · 4 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo6_11zon.webp">
+        <span class="blogp-list-num">03</span>
+        <img class="blogp-list-thumb" src="Assest/fo6_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">How Casa Marín tripled weekend orders</span>
+        <span class="blogp-list-meta">Partners · 6 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo8_11zon.webp">
+        <span class="blogp-list-num">04</span>
+        <img class="blogp-list-thumb" src="Assest/fo8_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">The 20-minute grain bowl that never gets boring</span>
+        <span class="blogp-list-meta">Recipes · 3 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo5_11zon.webp">
+        <span class="blogp-list-num">05</span>
+        <img class="blogp-list-thumb" src="Assest/fo5_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">Reading a menu like a line cook does</span>
+        <span class="blogp-list-meta">Guides · 5 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <a href="404.html" class="blogp-list-row" data-preview-img="Assest/fo21_11zon.webp">
+        <span class="blogp-list-num">06</span>
+        <img class="blogp-list-thumb" src="Assest/fo21_11zon.webp" alt="" loading="lazy" aria-hidden="true">
+        <span class="blogp-list-title">Why we still crave a table full of strangers</span>
+        <span class="blogp-list-meta">Culture · 4 min</span>
+        <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+    </div>
+  </div>
+  <div class="blogp-preview" id="blogpPreview"><img id="blogpPreviewImg" src="" alt=""></div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-top section-inner">
+    <div class="footer-brand">
+      <button type="button" class="footer-logo-btn" onclick="window.location.href='index.html';">
+  <img src="Assest/logo-bone.webp" alt="Stackly logo" class="footer-logo">
+</button>
+      <p>Great food, delivered with care. Stackly partners with kitchens that put craft first.</p>
+      <div class="social-row">
+        <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="404.html" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="404.html" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="service.html">Careers</a>
+      <a href="contact.html">Press</a>
+    </div>
+    <div class="footer-col">
+      <h5>Product</h5>
+      <a href="404.html">Menu</a>
+      <a href="404.html">How it works</a>
+      <a href="404.html">Mobile app</a>
+      <a href="404.html">Trending</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="404.html">Help center</a>
+      <a href="404.html">Contact us</a>
+      <a href="404.html">Partner with us</a>
+      <a href="404.html">Terms</a>
+    </div>
+    <div class="footer-col footer-col--newsletter">
+      <h5>Stay in the loop</h5>
+      <form class="newsletter-form" onsubmit="return validateNewsletter(this);">
+  <input type="email" placeholder="Your email address" required>
+  <button type="submit">
+    <i class="fa-solid fa-paper-plane"></i>
+  </button>
+</form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Stackly, Inc. All rights reserved.</span>
+    <div class="footer-legal"><a href="404.html">Privacy</a><a href="404.html">Terms</a><a href="404.html">Cookies</a></div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+<script> function validateNewsletter(form) { const email = form.querySelector('input[type="email"]'); const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!emailPattern.test(email.value.trim())) { email.focus(); return false; } window.location.href = '404.html'; return false; } /* Clear newsletter field when returning to this page */ window.addEventListener('pageshow', function () { document.querySelectorAll('.newsletter-form input[type="email"]').forEach(function (input) { input.value = ''; }); }); </script>
+
+<script> function validateBlogNewsletter(form) { const email = form.querySelector('input[type="email"]'); const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/; if (!emailPattern.test(email.value.trim())) { email.focus(); return false; } window.location.href = '404.html'; return false; } /* Clear email when returning to this page */ window.addEventListener('pageshow', function () { const email = document.getElementById('blogpSubEmail'); if (email) { email.value = ''; } }); </script>
+</body>
+</html>
